@@ -1,0 +1,207 @@
+.about-page {
+  padding-top: 100px;
+  padding-bottom: 160px;
+}
+
+.about-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 100px;
+}
+
+.about-image-column {
+  width: 500px;
+  height: 640px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 140px; 
+}
+
+.about-text-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 40px;
+  box-shadow: 0 20px 40px var(--shadow-color);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+}
+
+.about-image:hover {
+  transform: scale(1.02) rotate(-1deg);
+  box-shadow: 0 30px 60px rgba(255, 133, 161, 0.2);
+}
+
+.greeting {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.bio {
+  font-size: 20px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  background-color: var(--white);
+  padding: 32px;
+  border-radius: 32px;
+  box-shadow: 0 10px 30px rgba(255, 133, 161, 0.05);
+}
+
+.fact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fact-label {
+  font-size: 14px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.fact-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* --- Experience Timeline Styles --- */
+.experience-section, .education-section {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.exp-main-title, .edu-main-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 24px;
+}
+
+.timeline-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 32px;
+  flex-shrink: 0;
+}
+
+.timeline-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.timeline-line {
+  width: 2px;
+  height: 80px; /* As per design */
+}
+
+.timeline-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 40px; /* As per design */
+}
+
+.timeline-role {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.timeline-date {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.timeline-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* --- Education Card Styles --- */
+.education-card {
+  background-color: var(--white);
+  border-radius: 24px;
+  padding: 24px;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.edu-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.edu-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.edu-degree {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.edu-school {
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+.edu-date {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+/* Media query to handle smaller screens */
+@media (max-width: 1200px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+  
+  .about-image-column {
+    position: static;
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+  }
+}
