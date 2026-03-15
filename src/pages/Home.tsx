@@ -2,6 +2,7 @@ import './Home.css';
 import { Link } from 'react-router-dom';
 import { projects } from '../data/projects';
 import { useState, useEffect } from 'react';
+import { Sparkles, Code2, Globe, Palette, Box, Layers, Cpu, Server, Zap, Database, Terminal, Smartphone, Layout } from 'lucide-react';
 
 const Home = () => {
   const [mounted, setMounted] = useState(false);
@@ -16,24 +17,34 @@ const Home = () => {
     
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
-);
- }, []);
+  }, []);
 
   const title = "Crafting Digital Experiences";
 
   const skills = [
-    { name: 'React', color: 'var(--primary-color)' },
-    { name: 'Angular', color: 'var(--secondary-color)' },
-    { name: 'TypeScript', color: 'var(--primary-color)', solid: true },
-    { name: 'Vue', color: 'var(--accent-green)' },
-    { name: 'UI Design', color: 'rgba(255, 133, 161, 0.2)' },
-    { name: 'Unity 3D', color: 'var(--accent-purple)' },
+    { name: 'React', icon: <Layers size={18} />, color: 'var(--primary-color)' },
+    { name: 'Angular', icon: <Cpu size={18} />, color: 'var(--secondary-color)' },
+    { name: 'TypeScript', icon: <Code2 size={18} />, color: 'var(--primary-color)' },
+    { name: 'Vue', icon: <Globe size={18} />, color: 'var(--accent-green)' },
+    { name: 'UI/UX Design', icon: <Palette size={18} />, color: 'var(--accent-purple)' },
+    { name: 'Unity 3D', icon: <Box size={18} />, color: 'var(--accent-green)' },
+    { name: '3D Visualization', icon: <Box size={18} />, color: 'var(--accent-purple)' },
+    { name: 'Motion Dev', icon: <Zap size={18} />, color: 'var(--primary-color)' },
+    { name: 'ES6+ JS', icon: <Terminal size={18} />, color: 'var(--secondary-color)' },
+    { name: 'CSS Animation', icon: <Layout size={18} />, color: 'var(--primary-color)' },
+    { name: 'Digital Media', icon: <Smartphone size={18} />, color: 'var(--accent-purple)' },
+    { name: 'Responsive', icon: <Layout size={18} />, color: 'var(--secondary-color)' },
   ];
 
   return (
-    <div className="home">
+    <div className="home" style={{ 
+      '--mouse-x': `${mousePosition.x}px`, 
+      '--mouse-y': `${mousePosition.y}px` 
+    } as React.CSSProperties}>
+      <div className="stars"></div>
+      
       <section className="hero container">
-        <div className="hero-left" style={{ '--mouse-x': `${mousePosition.x}px`, '--mouse-y': `${mousePosition.y}px` }}>
+        <div className="hero-left">
           <div className="badge typing-cursor">Frontend Developer</div>
           <h1 className="headline typing-text">
             {title.split('').map((char, index) => (
@@ -53,18 +64,22 @@ const Home = () => {
       </section>
 
       <section id="skills" className="skills-section container">
-        <h2 className="section-title fade-in" style={{ '--delay': '0.2s' }}>My Skills 🍭</h2>
-        <div className="skills-grid">
+        <h2 className="section-title fade-in" style={{ '--delay': '0.2s' }}>
+          My Skills <Sparkles className="title-icon" />
+        </h2>
+        <div className="skills-flex">
           {skills.map((skill, index) => (
             <div 
               key={index} 
-              className={`skill-item ${skill.solid ? 'solid' : ''} pulse-skill`}
+              className="skill-pill floating-skill"
               style={{ 
                 '--skill-color': skill.color,
-                '--index': index
-              }}
+                '--index': index,
+                '--delay': `${index * 0.1}s`
+              } as React.CSSProperties}
             >
-              {skill.name}
+              <span className="skill-icon">{skill.icon}</span>
+              <span className="skill-name">{skill.name}</span>
             </div>
           ))}  
         </div>
@@ -85,7 +100,6 @@ const Home = () => {
         </div>
       </section>
 
-      <div className="stars"></div>
     </div>
   );
 };

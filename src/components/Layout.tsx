@@ -10,7 +10,7 @@ const Layout = () => {
 
   return (
     <div className="layout">
-      <header className="header container">
+      <header className="header">
         <Link to="/" className="logo" onClick={() => setMobileMenuOpen(false)}>
           <div className="logo-icon">
             <Code size={20} color="#FFFFFF" />
@@ -72,7 +72,7 @@ const Layout = () => {
         <Outlet />
       </main>
 
-      <footer className="footer container">
+      <footer className="footer">
         <h2 className="footer-headline">Let's create something magical! ✨</h2>
         <div className="socials">
           <a href="https://github.com/925754332-dev" target="_blank" rel="noopener noreferrer" className="social-icon github">
