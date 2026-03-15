@@ -2,27 +2,26 @@ import './About.css';
 import { Award, GraduationCap } from 'lucide-react';
 
 const About = () => {
-  // All complex state and effects for scroll locking have been removed for a pure CSS solution.
-  
+  // All complex state and effects for scroll locking have been removed for a pure CSS solution.  
   const facts = [
-    { label: '地点', value: '杭州' },
-    { label: '职位', value: '前端开发工程师' },
-    { label: '经验', value: '3年+' },
-    { label: '爱好', value: 'UI设计、3D、游戏开发' }
+    { label: 'Location', value: 'Hangzhou' },
+    { label: 'Position', value: 'Frontend Developer' },
+    { label: 'Experience', value: '5+ Years' },
+    { label: 'Hobbies', value: 'UI Design, 3D, Game Dev' }
   ];
 
   const experiences = [
     {
-      role: '前端开发工程师 @ 华为',
-      date: '2021.01 - 至今',
-      desc: '目前在华为担任前端开发工程师，负责产品线公共平台的相关前端开发任务。经手 20+ 项目，处理问题单 350+，100% 还原设计稿。精通 React 和 Angular 框架，具备快速上手和高效开发的能力。',
+      role: 'Frontend Developer @ Huawei',
+      date: 'Jan 2021 - Present',
+      desc: 'Currently working as a Frontend Developer at Huawei, responsible for frontend development tasks on common platform product lines. Handled 20+ projects, processed 350+ issue tickets, and restored 100% of original design specs. Proficient in React and Angular frameworks with quick ramp-up and efficient development capabilities.',
       color: '#FF85A1',
       hasLine: true,
     },
     {
-      role: '市场部实习生 @ 一起求职',
-      date: '2019.01 - 2019.05',
-      desc: '负责公众号运营和物料设计，参与内容编排和涨粉计划。为 10 多家合作学校内工作室设计 logo 墙，展现了设计能力和执行力。',
+      role: 'Marketing Intern @ Yiqi Job Search',
+      date: 'Jan 2019 - May 2019',
+      desc: 'Responsible for WeChat account operations and material design, participated in content planning and follower growth initiatives. Designed logos for 10+ partner school studios, demonstrating design skills and execution abilities.',
       color: '#82A0D8',
       hasLine: false,
     }
@@ -30,15 +29,15 @@ const About = () => {
 
   const educations = [
     {
-      degree: '硕士 | 设计与数字媒体 MSc',
-      school: '爱丁堡大学 (University of Edinburgh)',
+      degree: 'MSc | Design & Digital Media',
+      school: 'University of Edinburgh',
       date: '2019 - 2020',
       color: '#B092D5',
       icon: <Award size={24} color="#B092D5" />
     },
     {
-      degree: '本科 | 物联网工程',
-      school: '大连海事大学',
+      degree: 'BEng | Computer Network Engineering',
+      school: 'Dalian Maritime University',
       date: '2015 - 2019',
       color: '#82A0D8',
       icon: <GraduationCap size={24} color="#82A0D8" />
@@ -46,16 +45,16 @@ const About = () => {
   ];
 
   return (
-    // The .container class handles the max-width and centering.
+    // The .container class handles max-width and centering.
     <div className="about-page container"> 
       <div className="about-content">
         <div className="about-image-column">
             <img src="/images/kelly-zhong-portrait.jpg" alt="Kelly Zhong" className="about-image" />
         </div>
         <div className="about-text-column">
-            <h1 className="greeting">你好，我是 Kelly Zhong！👋</h1>
+            <h1 className="greeting">Hi, I'm Kelly Zhong! 👋</h1>
             <p className="bio">
-              我是一位热爱前端开发的工程师，拥有爱丁堡大学设计与数字媒体硕士学位。目前在华为担任前端开发工程师，精通 React 和 Angular 框架。擅长将设计思维融入代码开发，具备 UX 设计经验，熟练掌握 3D 可视化技术和动效开发。
+              I'm a passionate frontend developer with a Master's degree in Design & Digital Media from the University of Edinburgh. Currently working as a Frontend Developer at Huawei, proficient in React and Angular frameworks. I excel at integrating design thinking into code development, with UX design experience, and skilled in 3D visualization and motion effects.
             </p>
 
             <div className="facts-grid">

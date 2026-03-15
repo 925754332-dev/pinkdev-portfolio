@@ -20,7 +20,7 @@ const Resume = () => {
             <div className="contact-item">👤 Kelly Zhong | 女 | 26岁</div>
             <div className="contact-item">📧 925754332@qq.com</div>
             <div className="contact-item">📱 15542482022</div>
-            <div className="contact-item">💼 3年+工作经验</div>
+            <div className="contact-item">💼 5年+工作经验</div>
             <div className="contact-item">🎯 求职：前端开发工程师</div>
             <div className="contact-item">🌍 期望城市：杭州</div>
           </section>
@@ -71,7 +71,7 @@ const Resume = () => {
           <section>
             <h2 className="content-block-title">个人优势</h2>
             <ul className="bullet-list">
-              <li>拥有3年+的前端开发经验，专注于产品线公共平台的前端开发，并参与开发过20+个前端项目</li>
+              <li>拥有5年+的前端开发经验，专注于产品线公共平台的前端开发，并参与开发过20+个前端项目</li>
               <li>精通前端框架React、Angular，能够灵活运用这些框架进行高效开发</li>
               <li>除了前端开发技能，还掌握非前端语言Android和Java，展现出跨领域的技术实力</li>
               <li>具备快速上手和高效开发的能力，能够迅速适应新的技术和项目需求</li>
@@ -79,7 +79,7 @@ const Resume = () => {
               <li>掌握3D可视化技术，包括Unity3d和WebGL，能够为项目添加更丰富的视觉效果</li>
               <li>擅长动效开发，熟悉svg和canvas动画，能够为网页添加生动的动态效果</li>
               <li>掌握工程化相关内容 (webpack/babel/vite)，具备良好的工程化实践和优化能力，能够提高开发效率和项目质量</li>
-              <li>英语阅读能力良好，有留学，雅思成绩7.0，能够流畅阅读英语技术文档和资料</li>
+              <li>英语阅读能力良好，有留学经历，雅思成绩7.0，能够流畅阅读英语技术文档和资料</li>
             </ul>
           </section>
 
@@ -95,7 +95,7 @@ const Resume = () => {
                 <li>作为接口人，定位和解决问题，曾处理问题单350+</li>
                 <li>负责功能模块的软件设计、开发、单元测试的编写和与后端联调工作</li>
                 <li>100%的还原设计稿，实现前端页面，并从开发和客户的角度提出交互设计建议</li>
-                <li>看护项目代码质量，检视开发的代码，必要时对代码进行重构</li>
+                <li>维护项目代码质量，检视开发的代码，必要时对代码进行重构</li>
                 <li>研究前沿前端技术，总结工作经验，编写技术文档，分享前端经验</li>
               </ul>
             </div>
@@ -130,7 +130,7 @@ const Resume = () => {
                     <h3>Live UI (React) 组件库</h3>
                     <span className="proj-badge">React Components</span>
                   </div>
-                  <p className="proj-desc">该 React 组件库为公司内源项目，供产品线所有 React 前端项目使用，采用最新的 Live Design 3.0 规范。</p>
+                  <p className="proj-desc">该 React 组件库为公司内部项目，项目供产品线所有 React 前端项目使用，采用最新的 Live Design 3.0 规范。</p>
                   <ul className="bullet-list compact">
                     <li>独立完成两个组件 slide、layout</li>
                     <li>独立补齐了表格的拓展功能：表格拖拽、表格下展、总结栏、虚拟滚动等</li>
@@ -178,7 +178,7 @@ const Resume = () => {
                   <ul className="bullet-list compact">
                     <li>独立负责超融合、块文件发放等重点模块的开发，完成3个大版本迭代的开发</li>
                     <li>并担任虚拟化模块的接口人，负责定位和解决问题</li>
-                    <li>在不熟悉项目的情况下也能快速定位，迅速担责，修改问题单50+</li>
+                    <li>在不熟悉项目的情况下也能快速定位，迅速承担责任，修改问题单50+</li>
                     <li>获得版本之星称号</li>
                   </ul>
                 </div>
