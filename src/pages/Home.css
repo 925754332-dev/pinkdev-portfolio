@@ -476,9 +476,10 @@
     line-height: 1.6;
   }
   
-  .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 15px;
+  .skills-flex {
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
   }
   
   .home-projects-grid {
