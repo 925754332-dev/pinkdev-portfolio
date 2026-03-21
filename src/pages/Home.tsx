@@ -2,14 +2,12 @@ import './Home.css';
 import { Link } from 'react-router-dom';
 import { projects } from '../data/projects';
 import { useState, useEffect } from 'react';
-import { Sparkles, Code2, Globe, Palette, Box, Layers, Cpu, Server, Zap, Database, Terminal, Smartphone, Layout } from 'lucide-react';
+import { Sparkles, Code2, Globe, Palette, Box, Layers, Cpu, Zap, Terminal, Smartphone, Layout } from 'lucide-react';
 
 const Home = () => {
-  const [mounted, setMounted] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    setMounted(true);
     
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
@@ -48,7 +46,7 @@ const Home = () => {
           <div className="badge typing-cursor">Frontend Developer</div>
           <h1 className="headline typing-text">
             {title.split('').map((char, index) => (
-              <span key={index} className="char" style={{ '--index': index }}>
+              <span key={index} className="char" style={{ '--index': index } as React.CSSProperties}>
                 {char === ' ' ? '\u00A0' : char}
               </span>
             ))}
@@ -64,7 +62,7 @@ const Home = () => {
       </section>
 
       <section id="skills" className="skills-section container">
-        <h2 className="section-title fade-in" style={{ '--delay': '0.2s' }}>
+        <h2 className="section-title fade-in" style={{ '--delay': '0.2s' } as React.CSSProperties}>
           My Skills <Sparkles className="title-icon" />
         </h2>
         <div className="skills-flex">
@@ -86,15 +84,15 @@ const Home = () => {
       </section>
 
       <section className="projects-section container">
-        <h2 className="section-title fade-in" style={{ '--delay': '0.4s' }}>Featured Projects</h2>
+        <h2 className="section-title fade-in" style={{ '--delay': '0.4s' } as React.CSSProperties}>Featured Projects</h2>
         <div className="home-projects-grid">
           {projects.map((project, index) => (
-            <Link to={`/project/${project.id}`} key={project.id} className="home-project-card floating-card" style={{ '--index': index }}>
+            <Link to={`/project/${project.id}`} key={project.id} className="home-project-card floating-card" style={{ '--index': index } as React.CSSProperties}>
               <div className="home-project-image-wrapper">
                 <img src={project.image} alt={project.title} className="home-project-img" />
               </div>
               <h3 className="home-project-title">{project.title}</h3>
-              <p className="home-project-desc fade-in" style={{ '--delay': `${0.5 + index * 0.1}s` }}>{project.desc}</p>
+              <p className="home-project-desc fade-in" style={{ '--delay': `${0.5 + index * 0.1}s` } as React.CSSProperties}>{project.desc}</p>
             </Link>
           ))}
         </div>
