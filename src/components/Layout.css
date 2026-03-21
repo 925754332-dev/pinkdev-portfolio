@@ -128,8 +128,22 @@
 
 .mobile-nav .contact-btn {
   width: 100%;
-  text-align: center;
-  margin-top: 8px;
+  text-align: left;
+  margin-top: 0;
+  padding: 12px 0;
+  background: none !important;
+  color: var(--text-primary) !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  transition: color 0.3s !important;
+}
+
+.mobile-nav .contact-btn:hover {
+  color: var(--primary-color) !important;
+  background: none !important;
+  transform: none !important;
 }
 
 .footer {
