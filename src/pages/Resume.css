@@ -19,31 +19,29 @@
 
 /* --- Sidebar (now top section) --- */
 .resume-sidebar {
-  width: 100%;
   background-color: #FDF2F5;
-  padding: 40px;
+  padding: 40px 50px;
   display: flex;
   flex-direction: column;
+  gap: 35px;
+}
+
+/* 头像 + 名字/基本信息 */
+.sidebar-profile {
+  display: flex;
   align-items: center;
   gap: 30px;
 }
 
-/* 头像 + 基本信息横排 */
-.sidebar-profile {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-}
-
 .resume-avatar {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   background-color: #FF85A1;
   overflow: hidden;
-  border: 4px solid white;
+  border: 5px solid white;
+  box-shadow: 0 5px 20px rgba(255, 133, 161, 0.3);
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(255, 133, 161, 0.2);
 }
 
 .resume-avatar img {
@@ -52,29 +50,60 @@
   object-fit: cover;
 }
 
-/* 技能/语言/教育 三栏 */
+.profile-text-content h1 {
+  margin: 0 0 5px 0;
+  font-size: 2.2em;
+  color: #333;
+  font-weight: 700;
+}
+
+.profile-text-content .profile-title {
+  margin: 0;
+  font-size: 1.1em;
+  color: #FF85A1;
+  font-weight: 600;
+}
+
+.contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 25px;
+  margin-top: 15px;
+}
+
+/* 三栏 */
 .sidebar-details {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
+  gap: 35px;
   width: 100%;
 }
 
 .resume-section-title {
-  font-size: 14px;
-  font-weight: 800;
+  font-size: 1.05em;
+  font-weight: 700;
   color: #FF85A1;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
+  margin: 0 0 15px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #FCEFF2;
+  position: relative;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.contact-item, .social-item {
-  font-size: 12px;
-  color: #666;
-  margin-bottom: 8px;
-  display: block;
-  text-decoration: none;
+.resume-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: #FF85A1;
+}
+
+.contact-item {
+  font-size: 0.9em;
+  color: #555;
 }
 
 .skills-list {
@@ -84,12 +113,16 @@
 }
 
 .skill-tag {
-  padding: 6px 12px;
-  font-size: 11px;
-  border: 1px solid #FF85A1;
+  background-color: white;
   color: #FF85A1;
-  display: inline-block;
-  width: fit-content;
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 0.85em;
+  font-weight: 500;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease-in-out;
+  cursor: default;
 }
 
 .skill-tag.solid {
@@ -97,10 +130,37 @@
   color: white;
 }
 
-.lang-item, .interest-text {
-  font-size: 12px;
-  color: #666;
+.skill-tag:not(.solid):hover {
+  background-color: #FF85A1;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.lang-item {
+  font-size: 0.95em;
+  color: #555;
+  margin-bottom: 8px;
   line-height: 1.6;
+}
+
+.edu-text {
+  font-size: 0.95em;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #FCEFF2;
+}
+
+.edu-text:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.edu-text strong {
+  color: #333;
+  font-weight: 600;
 }
 
 /* --- Main Content --- */
@@ -245,13 +305,28 @@
     width: 100%;
   }
   .resume-sidebar {
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 20px;
+    padding: 30px 25px;
   }
-  .resume-sidebar > section {
-    min-width: auto;
-    width: 100%;
+  .sidebar-profile {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  .resume-avatar {
+    width: 100px;
+    height: 100px;
+  }
+  .profile-text-content h1 {
+    font-size: 1.9em;
+  }
+  .contact-list {
+    justify-content: center;
+    gap: 8px 15px;
+    margin-top: 12px;
+  }
+  .sidebar-details {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
   .resume-main {
     padding: 30px 20px;

@@ -11,19 +11,20 @@ const Resume = () => {
       <div className="resume-paper">
         {/* Sidebar */}
         <aside className="resume-sidebar">
-          {/* 头像 + 基本信息 */}
+          {/* 头像 + 名字 + 联系方式 */}
           <div className="sidebar-profile">
             <div className="resume-avatar">
               <img src="/images/钟迎港33038119970222014X---d317a64f-5a57-4112-8336-3ca66b96ab20.jpg" alt="Kelly Zhong" />
             </div>
-            <div>
-              <h2 className="resume-section-title">基本信息</h2>
-              <div className="contact-item">👤 Kelly Zhong | 女 | 26岁</div>
-              <div className="contact-item">📧 925754332@qq.com</div>
-              <div className="contact-item">📱 15542482022</div>
-              <div className="contact-item">💼 5年+工作经验</div>
-              <div className="contact-item">🎯 求职：前端开发工程师</div>
-              <div className="contact-item">🌍 期望城市：杭州</div>
+            <div className="profile-text-content">
+              <h1>Kelly Zhong</h1>
+              <p className="profile-title">前端开发工程师 | 华为</p>
+              <div className="contact-list">
+                <span className="contact-item">📧 925754332@qq.com</span>
+                <span className="contact-item">📱 15542482022</span>
+                <span className="contact-item">💼 5年+经验</span>
+                <span className="contact-item">🌍 杭州</span>
+              </div>
             </div>
           </div>
 
