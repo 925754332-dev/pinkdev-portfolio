@@ -11,54 +11,59 @@ const Resume = () => {
       <div className="resume-paper">
         {/* Sidebar */}
         <aside className="resume-sidebar">
-          <div className="resume-avatar">
-            <img src="/images/钟迎港33038119970222014X---d317a64f-5a57-4112-8336-3ca66b96ab20.jpg" alt="Kelly Zhong" />
+          {/* 头像 + 基本信息 */}
+          <div className="sidebar-profile">
+            <div className="resume-avatar">
+              <img src="/images/钟迎港33038119970222014X---d317a64f-5a57-4112-8336-3ca66b96ab20.jpg" alt="Kelly Zhong" />
+            </div>
+            <div>
+              <h2 className="resume-section-title">基本信息</h2>
+              <div className="contact-item">👤 Kelly Zhong | 女 | 26岁</div>
+              <div className="contact-item">📧 925754332@qq.com</div>
+              <div className="contact-item">📱 15542482022</div>
+              <div className="contact-item">💼 5年+工作经验</div>
+              <div className="contact-item">🎯 求职：前端开发工程师</div>
+              <div className="contact-item">🌍 期望城市：杭州</div>
+            </div>
           </div>
 
-          <section>
-            <h2 className="resume-section-title">基本信息</h2>
-            <div className="contact-item">👤 Kelly Zhong | 女 | 26岁</div>
-            <div className="contact-item">📧 925754332@qq.com</div>
-            <div className="contact-item">📱 15542482022</div>
-            <div className="contact-item">💼 5年+工作经验</div>
-            <div className="contact-item">🎯 求职：前端开发工程师</div>
-            <div className="contact-item">🌍 期望城市：杭州</div>
-          </section>
+          {/* 三栏：技能 / 语言 / 教育 */}
+          <div className="sidebar-details">
+            <section>
+              <h2 className="resume-section-title">专业技能</h2>
+              <div className="skills-list">
+                <span className="skill-tag solid">React</span>
+                <span className="skill-tag solid">Angular</span>
+                <span className="skill-tag">TypeScript</span>
+                <span className="skill-tag">JavaScript</span>
+                <span className="skill-tag">Android</span>
+                <span className="skill-tag">Java</span>
+                <span className="skill-tag">PS / AI</span>
+                <span className="skill-tag">Unity3d</span>
+                <span className="skill-tag">Webpack/Babel/Vite</span>
+              </div>
+            </section>
 
-          <section>
-            <h2 className="resume-section-title">专业技能</h2>
-            <div className="skills-list">
-              <span className="skill-tag solid">React</span>
-              <span className="skill-tag solid">Angular</span>
-              <span className="skill-tag">TypeScript</span>
-              <span className="skill-tag">JavaScript</span>
-              <span className="skill-tag">Android</span>
-              <span className="skill-tag">Java</span>
-              <span className="skill-tag">PS / AI</span>
-              <span className="skill-tag">Unity3d</span>
-              <span className="skill-tag">Webpack/Babel/Vite</span>
-            </div>
-          </section>
+            <section>
+              <h2 className="resume-section-title">语言能力</h2>
+              <div className="lang-item">• 中文 (母语)</div>
+              <div className="lang-item">• 英语 (雅思 7.0)</div>
+            </section>
 
-          <section>
-            <h2 className="resume-section-title">语言能力</h2>
-            <div className="lang-item">• 中文 (母语)</div>
-            <div className="lang-item">• 英语 (雅思 7.0)</div>
-          </section>
-
-          <section>
-            <h2 className="resume-section-title">教育背景</h2>
-            <div className="edu-text">
-              <strong>硕士 | 设计与数字媒体</strong><br />
-              爱丁堡大学 (2019-2020)<br />
-              GPA: 83/100, 排名: 12/61
-            </div>
-            <div className="edu-text">
-              <strong>本科 | 物联网工程</strong><br />
-              大连海事大学 (2015-2019)<br />
-              GPA: 83/100, 排名: 15/61
-            </div>
-          </section>
+            <section>
+              <h2 className="resume-section-title">教育背景</h2>
+              <div className="edu-text">
+                <strong>硕士 | 设计与数字媒体</strong><br />
+                爱丁堡大学 (2019-2020)<br />
+                GPA: 83/100, 排名: 12/61
+              </div>
+              <div className="edu-text">
+                <strong>本科 | 物联网工程</strong><br />
+                大连海事大学 (2015-2019)<br />
+                GPA: 83/100, 排名: 15/61
+              </div>
+            </section>
+          </div>
         </aside>
 
         {/* Main Content */}
