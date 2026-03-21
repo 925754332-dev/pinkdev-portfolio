@@ -147,3 +147,67 @@
     font-size: 48px;
   }
 }
+
+@media (max-width: 768px) {
+  .detailed-projects-page {
+    padding: 20px 15px;
+  }
+  
+  .projects-title {
+    font-size: 32px;
+  }
+  
+  .projects-sub {
+    font-size: 14px;
+  }
+  
+  .detailed-proj-card {
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .proj-title-text {
+    font-size: 18px;
+  }
+  
+  .proj-desc-text {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  /* 过滤按钮触控优化 */
+  .filter-btn-detailed {
+    min-height: 44px;
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .detailed-projects-page {
+    padding: 15px 12px;
+  }
+  
+  .projects-title {
+    font-size: 24px;
+  }
+  
+  .filters-container {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .filter-btn-detailed {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  
+  .detailed-proj-card {
+    padding: 16px;
+  }
+  
+  .proj-badge {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+}

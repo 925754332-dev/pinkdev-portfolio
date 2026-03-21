@@ -463,6 +463,8 @@
   
   .hero-image {
     max-width: 300px;
+    width: 100%;
+    height: auto;
   }
   
   .headline {
@@ -471,6 +473,7 @@
   
   .subline {
     font-size: 14px;
+    line-height: 1.6;
   }
   
   .skills-grid {
@@ -480,5 +483,81 @@
   
   .home-projects-grid {
     grid-template-columns: 1fr;
+  }
+  
+  /* 移动端触控优化 */
+  .view-projects-btn {
+    min-height: 48px; /* 触控最小目标尺寸 */
+    font-size: 16px;
+  }
+  
+  /* 项目卡片触控区域优化 */
+  .home-project-card {
+    padding: 20px;
+  }
+  
+  /* 技能标签触控优化 */
+  .skill-pill {
+    min-height: 44px;
+    padding: 12px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 30px 12px;
+  }
+  
+  .headline {
+    font-size: 1.6rem;
+  }
+  
+  .subline {
+    font-size: 13px;
+  }
+  
+  .badge {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+  
+  /* 防止字体过小导致阅读困难 */
+  .skill-pill {
+    font-size: 14px;
+  }
+  
+  /* 确保项目卡片不会太挤 */
+  .home-project-card {
+    margin-bottom: 16px;
+  }
+}
+
+/* 触摸设备优化：减少动画 */
+@media (hover: none) and (pointer: coarse) {
+  .floating-skill,
+  .floating-card {
+    animation: none !important;
+  }
+  
+  /* 提高按钮可点击区域 */
+  button, a {
+    min-height: 44px;
+  }
+}
+
+/* 减少动画偏好设置 */
+@media (prefers-reduced-motion: reduce) {
+  .char {
+    animation: none;
+    opacity: 1;
+  }
+  
+  .floating-skill,
+  .floating-card {
+    animation: none !important;
+  }
+  
+  .stars {
+    background: none !important;
   }
 }
