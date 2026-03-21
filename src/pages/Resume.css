@@ -1,210 +1,231 @@
 .resume-page {
-  background: #fafafa;
+  background-color: #f5f5f5;
   min-height: 100vh;
-  padding: 0;
-  font-family: 'Inter', -apple-system, sans-serif;
-}
-
-.resume-content {
-  max-width: 680px;
-  margin: 0 auto;
-  padding: 80px 24px 120px;
-}
-
-/* Hero */
-.resume-hero {
-  margin-bottom: 64px;
-}
-
-.resume-hero h1 {
-  font-size: 3em;
-  font-weight: 800;
-  color: #111;
-  margin: 0;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-}
-
-.hero-subtitle {
-  font-size: 1.1em;
-  color: #FF85A1;
-  margin: 8px 0 0;
-  font-weight: 500;
-}
-
-.hero-contact {
-  margin-top: 16px;
-  font-size: 0.85em;
-  color: #999;
-}
-
-.hero-contact .dot {
-  margin: 0 6px;
-  color: #ddd;
-}
-
-/* Sections */
-.resume-section {
-  margin-bottom: 56px;
-}
-
-.resume-section h2 {
-  font-size: 0.75em;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #bbb;
-  margin: 0 0 24px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid #eee;
-}
-
-/* Tags */
-.tags {
+  padding: 40px 20px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
 }
 
-.tag {
-  font-size: 0.82em;
+.resume-paper {
+  width: 800px;
+  background-color: white;
+  display: flex;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  min-height: 1100px; /* A4 Ratio approx */
+}
+
+/* --- Sidebar --- */
+.resume-sidebar {
+  width: 260px;
+  background-color: #FDF2F5;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.resume-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background-color: #FF85A1;
+  overflow: hidden;
+  border: 4px solid white;
+}
+
+.resume-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.resume-section-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #FF85A1;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.contact-item, .social-item {
+  font-size: 12px;
   color: #666;
-  padding: 6px 14px;
-  border: 1px solid #e5e5e5;
-  border-radius: 6px;
-  background: white;
-  cursor: default;
-  transition: all 0.15s;
+  margin-bottom: 8px;
+  display: block;
+  text-decoration: none;
 }
 
-.tag.active {
-  background: #111;
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skill-tag {
+  padding: 6px 12px;
+  font-size: 11px;
+  border: 1px solid #FF85A1;
+  color: #FF85A1;
+  display: inline-block;
+  width: fit-content;
+}
+
+.skill-tag.solid {
+  background-color: #FF85A1;
   color: white;
-  border-color: #111;
 }
 
-/* Highlights */
-.highlights {
-  list-style: none;
-  padding: 0;
+.lang-item, .interest-text {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* --- Main Content --- */
+.resume-main {
+  flex: 1;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.resume-header h1 {
+  font-size: 42px;
   margin: 0;
+  color: #333;
+  font-weight: 800;
 }
 
-.highlights li {
-  padding: 10px 0;
-  border-bottom: 1px solid #f0f0f0;
-  color: #444;
-  font-size: 0.95em;
-  line-height: 1.5;
+.resume-header .tagline {
+  font-size: 18px;
+  color: #FF85A1;
+  margin-top: 5px;
 }
 
-.highlights li:last-child {
-  border-bottom: none;
+.content-block-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #333;
+  border-bottom: 2px solid #FDF2F5;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-/* Experience */
-.exp {
-  padding: 20px 0;
+.experience-item, .project-item {
+  margin-bottom: 25px;
 }
 
-.exp-header {
+.exp-header, .proj-header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   margin-bottom: 8px;
 }
 
-.exp-header strong {
-  font-size: 1em;
-  color: #222;
+.exp-header h3, .proj-header h3 {
+  font-size: 16px;
+  margin: 0;
+  color: #444;
 }
 
-.exp-date {
-  font-size: 0.8em;
-  color: #aaa;
+.date {
+  font-size: 13px;
+  color: #999;
 }
 
-.exp p {
-  font-size: 0.9em;
+.exp-desc, .proj-desc, .summary-text {
+  font-size: 14px;
   color: #666;
-  line-height: 1.7;
+  line-height: 1.6;
   margin: 0;
 }
 
-/* Projects */
-.project {
-  padding: 20px 0;
-  border-bottom: 1px solid #f0f0f0;
+.bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
 }
 
-.project:last-child {
-  border-bottom: none;
+.bullet-list li {
+  position: relative;
+  padding-left: 15px;
+  margin-bottom: 5px;
 }
 
-.proj-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.proj-header strong {
-  font-size: 1em;
-  color: #222;
-}
-
-.proj-tag {
-  font-size: 0.72em;
+.bullet-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
   color: #FF85A1;
-  background: #FFF0F3;
-  padding: 3px 10px;
-  border-radius: 4px;
-  font-weight: 500;
 }
 
-.project p {
-  font-size: 0.9em;
-  color: #666;
-  line-height: 1.7;
-  margin: 0;
+.edu-text {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
 }
 
-/* Education */
-.edu {
+.project-with-img {
   display: flex;
-  gap: 40px;
+  gap: 20px;
+  align-items: flex-start;
 }
 
-.edu-item {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+.proj-img {
+  width: 80px;
+  height: 80px;
+  background-color: #f5f5f5;
+  flex-shrink: 0;
 }
 
-.edu-item strong {
-  font-size: 0.95em;
-  color: #222;
+.proj-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.edu-item span {
-  font-size: 0.82em;
-  color: #aaa;
-}
-
-/* Mobile */
-@media (max-width: 640px) {
-  .resume-content {
-    padding: 48px 20px 80px;
+/* --- Print Optimization --- */
+@media print {
+  .resume-page {
+    padding: 0;
+    background-color: white;
   }
-  .resume-hero h1 {
-    font-size: 2.2em;
+  
+  .resume-paper {
+    box-shadow: none;
+    width: 100%;
+    height: 100%;
   }
-  .edu {
+
+  /* 隐藏网页装饰元素 */
+  nav, footer, .chat-widget-container, .contact-btn {
+    display: none !important;
+  }
+
+  /* 确保颜色在打印时保留 */
+  .resume-sidebar {
+    background-color: #FDF2F5 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .skill-tag.solid {
+    background-color: #FF85A1 !important;
+    -webkit-print-color-adjust: exact;
+  }
+}
+
+@media (max-width: 850px) {
+  .resume-paper {
+    width: 100%;
     flex-direction: column;
-    gap: 16px;
   }
-  .exp-header {
-    flex-direction: column;
-    gap: 4px;
+  .resume-sidebar {
+    width: 100%;
   }
 }
