@@ -22,9 +22,6 @@ const Layout = () => {
               </defs>
               <circle cx="32" cy="32" r="30" fill="url(#logoGrad)"/>
               <path d="M32 50 C32 50 14 38 14 26 C14 20 18 16 23 16 C26.5 16 29.5 18 32 21 C34.5 18 37.5 16 41 16 C46 16 50 20 50 26 C50 38 32 50 32 50Z" fill="white" opacity="0.95"/>
-              <circle cx="48" cy="12" r="1.5" fill="white" opacity="0.8"/>
-              <circle cx="14" cy="16" r="1" fill="white" opacity="0.6"/>
-              <circle cx="52" cy="28" r="0.8" fill="white" opacity="0.5"/>
             </svg>
           </div>
           <span className="logo-text">PinkDev</span>
