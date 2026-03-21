@@ -11,26 +11,24 @@ const Resume = () => {
       <div className="resume-paper">
         {/* Sidebar */}
         <aside className="resume-sidebar">
-          {/* 头像 + 名字 + 联系方式 */}
-          <div className="sidebar-profile">
+          {/* 头像 + 名字居中 */}
+          <div className="sidebar-header">
             <div className="resume-avatar">
               <img src="/images/钟迎港33038119970222014X---d317a64f-5a57-4112-8336-3ca66b96ab20.jpg" alt="Kelly Zhong" />
             </div>
-            <div className="profile-text-content">
-              <h1>Kelly Zhong</h1>
-              <p className="profile-title">前端开发工程师 | 华为</p>
-              <div className="contact-list">
-                <span className="contact-item">📧 925754332@qq.com</span>
-                <span className="contact-item">📱 15542482022</span>
-                <span className="contact-item">💼 5年+经验</span>
-                <span className="contact-item">🌍 杭州</span>
-              </div>
+            <h1 className="sidebar-name">Kelly Zhong</h1>
+            <p className="sidebar-title">前端开发工程师 | 华为</p>
+            <div className="contact-list">
+              <span className="contact-item">📧 925754332@qq.com</span>
+              <span className="contact-item">📱 15542482022</span>
+              <span className="contact-item">💼 5年+经验</span>
+              <span className="contact-item">🌍 杭州</span>
             </div>
           </div>
 
           {/* 三栏：技能 / 语言 / 教育 */}
           <div className="sidebar-details">
-            <section>
+            <section className="detail-card">
               <h2 className="resume-section-title">专业技能</h2>
               <div className="skills-list">
                 <span className="skill-tag solid">React</span>
@@ -45,13 +43,13 @@ const Resume = () => {
               </div>
             </section>
 
-            <section>
+            <section className="detail-card">
               <h2 className="resume-section-title">语言能力</h2>
               <div className="lang-item">• 中文 (母语)</div>
               <div className="lang-item">• 英语 (雅思 7.0)</div>
             </section>
 
-            <section>
+            <section className="detail-card">
               <h2 className="resume-section-title">教育背景</h2>
               <div className="edu-text">
                 <strong>硕士 | 设计与数字媒体</strong><br />

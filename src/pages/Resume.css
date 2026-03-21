@@ -23,25 +23,27 @@
   padding: 40px 50px;
   display: flex;
   flex-direction: column;
-  gap: 35px;
-}
-
-/* 头像 + 名字/基本信息 */
-.sidebar-profile {
-  display: flex;
   align-items: center;
   gap: 30px;
 }
 
+/* 头像 + 名字居中 */
+.sidebar-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
 .resume-avatar {
-  width: 120px;
-  height: 120px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   background-color: #FF85A1;
   overflow: hidden;
   border: 5px solid white;
   box-shadow: 0 5px 20px rgba(255, 133, 161, 0.3);
-  flex-shrink: 0;
+  margin-bottom: 15px;
 }
 
 .resume-avatar img {
@@ -50,16 +52,16 @@
   object-fit: cover;
 }
 
-.profile-text-content h1 {
-  margin: 0 0 5px 0;
-  font-size: 2.2em;
+.sidebar-name {
+  margin: 0;
+  font-size: 2em;
   color: #333;
   font-weight: 700;
 }
 
-.profile-text-content .profile-title {
-  margin: 0;
-  font-size: 1.1em;
+.sidebar-title {
+  margin: 5px 0 0 0;
+  font-size: 1.05em;
   color: #FF85A1;
   font-weight: 600;
 }
@@ -67,16 +69,29 @@
 .contact-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 25px;
-  margin-top: 15px;
+  justify-content: center;
+  gap: 8px 20px;
+  margin-top: 12px;
 }
 
-/* 三栏 */
+.contact-item {
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* 三栏等高 */
 .sidebar-details {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 35px;
+  gap: 25px;
   width: 100%;
+  align-items: stretch;
+}
+
+.detail-card {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  padding: 20px;
 }
 
 .resume-section-title {
@@ -305,28 +320,11 @@
     width: 100%;
   }
   .resume-sidebar {
-    padding: 30px 25px;
-  }
-  .sidebar-profile {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-  }
-  .resume-avatar {
-    width: 100px;
-    height: 100px;
-  }
-  .profile-text-content h1 {
-    font-size: 1.9em;
-  }
-  .contact-list {
-    justify-content: center;
-    gap: 8px 15px;
-    margin-top: 12px;
+    padding: 30px 20px;
   }
   .sidebar-details {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 20px;
   }
   .resume-main {
     padding: 30px 20px;
