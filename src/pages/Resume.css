@@ -17,33 +17,32 @@
   min-height: auto;
 }
 
-/* --- Sidebar (now top section) --- */
+/* --- Pink Header --- */
 .resume-sidebar {
   background-color: #FDF2F5;
-  padding: 40px 50px;
+  padding: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 0;
 }
 
-/* 头像 + 名字居中 */
-.sidebar-header {
+/* 主役：头像 + 名字 */
+.sidebar-hero {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  margin-bottom: 20px;
 }
 
 .resume-avatar {
-  width: 110px;
-  height: 110px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   background-color: #FF85A1;
   overflow: hidden;
-  border: 5px solid white;
-  box-shadow: 0 5px 20px rgba(255, 133, 161, 0.3);
-  margin-bottom: 15px;
+  border: 4px solid white;
+  margin-bottom: 16px;
 }
 
 .resume-avatar img {
@@ -54,128 +53,80 @@
 
 .sidebar-name {
   margin: 0;
-  font-size: 2em;
+  font-size: 1.6em;
   color: #333;
   font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .sidebar-title {
-  margin: 5px 0 0 0;
-  font-size: 1.05em;
+  margin: 4px 0 0 0;
+  font-size: 0.95em;
   color: #FF85A1;
-  font-weight: 600;
+  font-weight: 500;
 }
 
-.contact-list {
+/* 联系方式 - 弱化 */
+.sidebar-contact {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px 20px;
-  margin-top: 12px;
+  gap: 10px;
+  font-size: 0.8em;
+  color: #999;
+  margin-bottom: 30px;
 }
 
-.contact-item {
-  font-size: 0.9em;
-  color: #555;
-}
-
-/* 三栏等高 */
+/* 三栏 - 干净卡片 */
 .sidebar-details {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 25px;
+  gap: 1px;
   width: 100%;
-  align-items: stretch;
+  background: rgba(255, 133, 161, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .detail-card {
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.7);
   padding: 20px;
+  text-align: center;
 }
 
-.resume-section-title {
-  font-size: 1.05em;
-  font-weight: 700;
+.detail-label {
+  font-size: 0.7em;
+  font-weight: 600;
   color: #FF85A1;
-  margin: 0 0 15px 0;
-  padding-bottom: 8px;
-  border-bottom: 1px solid #FCEFF2;
-  position: relative;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1.5px;
+  margin: 0 0 10px 0;
 }
 
-.resume-section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 40px;
-  height: 2px;
-  background-color: #FF85A1;
-}
-
-.contact-item {
-  font-size: 0.9em;
+.detail-value {
+  font-size: 0.85em;
   color: #555;
+  line-height: 1.6;
 }
 
 .skills-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
+  justify-content: center;
 }
 
 .skill-tag {
-  background-color: white;
+  background: white;
   color: #FF85A1;
-  padding: 6px 14px;
-  border-radius: 16px;
-  font-size: 0.85em;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.78em;
   font-weight: 500;
-  border: none;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  transition: all 0.2s ease-in-out;
   cursor: default;
 }
 
 .skill-tag.solid {
-  background-color: #FF85A1;
+  background: #FF85A1;
   color: white;
-}
-
-.skill-tag:not(.solid):hover {
-  background-color: #FF85A1;
-  color: white;
-  transform: translateY(-2px);
-}
-
-.lang-item {
-  font-size: 0.95em;
-  color: #555;
-  margin-bottom: 8px;
-  line-height: 1.6;
-}
-
-.edu-text {
-  font-size: 0.95em;
-  color: #555;
-  line-height: 1.5;
-  margin-bottom: 12px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #FCEFF2;
-}
-
-.edu-text:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.edu-text strong {
-  color: #333;
-  font-weight: 600;
 }
 
 /* --- Main Content --- */

@@ -11,25 +11,28 @@ const Resume = () => {
       <div className="resume-paper">
         {/* Sidebar */}
         <aside className="resume-sidebar">
-          {/* 头像 + 名字居中 */}
-          <div className="sidebar-header">
+          {/* 主役：头像 + 名字 */}
+          <div className="sidebar-hero">
             <div className="resume-avatar">
               <img src="/images/钟迎港33038119970222014X---d317a64f-5a57-4112-8336-3ca66b96ab20.jpg" alt="Kelly Zhong" />
             </div>
             <h1 className="sidebar-name">Kelly Zhong</h1>
-            <p className="sidebar-title">前端开发工程师 | 华为</p>
-            <div className="contact-list">
-              <span className="contact-item">📧 925754332@qq.com</span>
-              <span className="contact-item">📱 15542482022</span>
-              <span className="contact-item">💼 5年+经验</span>
-              <span className="contact-item">🌍 杭州</span>
-            </div>
+            <p className="sidebar-title">前端开发工程师</p>
           </div>
 
-          {/* 三栏：技能 / 语言 / 教育 */}
+          {/* 联系方式 - 弱化 */}
+          <div className="sidebar-contact">
+            <span>925754332@qq.com</span>
+            <span>·</span>
+            <span>15542482022</span>
+            <span>·</span>
+            <span>杭州</span>
+          </div>
+
+          {/* 三栏信息 */}
           <div className="sidebar-details">
             <section className="detail-card">
-              <h2 className="resume-section-title">专业技能</h2>
+              <h2 className="detail-label">技能</h2>
               <div className="skills-list">
                 <span className="skill-tag solid">React</span>
                 <span className="skill-tag solid">Angular</span>
@@ -37,29 +40,21 @@ const Resume = () => {
                 <span className="skill-tag">JavaScript</span>
                 <span className="skill-tag">Android</span>
                 <span className="skill-tag">Java</span>
-                <span className="skill-tag">PS / AI</span>
-                <span className="skill-tag">Unity3d</span>
-                <span className="skill-tag">Webpack/Babel/Vite</span>
               </div>
             </section>
 
             <section className="detail-card">
-              <h2 className="resume-section-title">语言能力</h2>
-              <div className="lang-item">• 中文 (母语)</div>
-              <div className="lang-item">• 英语 (雅思 7.0)</div>
+              <h2 className="detail-label">语言</h2>
+              <div className="detail-value">
+                中文 · 英语 (雅思 7.0)
+              </div>
             </section>
 
             <section className="detail-card">
-              <h2 className="resume-section-title">教育背景</h2>
-              <div className="edu-text">
-                <strong>硕士 | 设计与数字媒体</strong><br />
-                爱丁堡大学 (2019-2020)<br />
-                GPA: 83/100, 排名: 12/61
-              </div>
-              <div className="edu-text">
-                <strong>本科 | 物联网工程</strong><br />
-                大连海事大学 (2015-2019)<br />
-                GPA: 83/100, 排名: 15/61
+              <h2 className="detail-label">教育</h2>
+              <div className="detail-value">
+                硕士 · 爱丁堡大学<br/>
+                本科 · 大连海事大学
               </div>
             </section>
           </div>
