@@ -194,11 +194,12 @@ const ChatWidget: React.FC = () => {
               </button>
             </div>
 
-            {/* 拖拽调整大小的手柄 */}
-            <div className="resize-handle" onMouseDown={handleResizeStart} title="Drag to resize">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" opacity="0.4">
-                <path d="M14 14L8 8M14 8L8 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
-                <path d="M14 14L10 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
+            {/* 拖拽调整大小的手柄 - 右下角 */}
+            <div className="resize-handle" onMouseDown={handleResizeStart} title="拖拽调整大小">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" opacity="0.5">
+                <path d="M12 12L6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
+                <path d="M12 8L8 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
+                <path d="M12 4L4 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
               </svg>
             </div>
           </motion.div>
