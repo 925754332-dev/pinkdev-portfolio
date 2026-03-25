@@ -14,10 +14,9 @@ const ChatWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [chatSize, setChatSize] = useState({ width: 380, height: 520 });
-  const [chatPos, setChatPos] = useState({ x: 0, y: 0 });
   const [resizeDir, setResizeDir] = useState<string | null>(null);
   const chatWindowRef = useRef<HTMLDivElement>(null);
-  const startPos = useRef({ x: 0, y: 0, width: 0, height: 0, chatX: 0, chatY: 0 });
+  const startPos = useRef({ x: 0, y: 0, width: 0, height: 0 });
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 'welcome',
@@ -92,8 +91,6 @@ const ChatWidget: React.FC = () => {
       y: e.clientY,
       width: chatSize.width,
       height: chatSize.height,
-      chatX: chatPos.x,
-      chatY: chatPos.y,
     };
   };
 
@@ -127,7 +124,7 @@ const ChatWidget: React.FC = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            style={isFullscreen ? undefined : { width: chatSize.width, height: chatSize.height, right: chatPos.x, bottom: chatPos.y }}
+            style={isFullscreen ? undefined : { width: chatSize.width, height: chatSize.height }}
           >
             {/* 顶部状态栏 */}
             <div className="chat-header">
