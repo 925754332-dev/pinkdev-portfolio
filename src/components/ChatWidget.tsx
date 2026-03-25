@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Bot, Send, X, Sparkles } from 'lucide-react';
+import { Bot, Send, X, Sparkles, Maximize2, Minimize2 } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import './ChatWidget.css';
 
@@ -12,10 +12,12 @@ interface Message {
 
 const ChatWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const [chatSize, setChatSize] = useState({ width: 380, height: 520 });
-  const [isResizing, setIsResizing] = useState(false);
+  const [chatPos, setChatPos] = useState({ x: 0, y: 0 });
+  const [resizeDir, setResizeDir] = useState<string | null>(null);
   const chatWindowRef = useRef<HTMLDivElement>(null);
-  const startPos = useRef({ x: 0, y: 0, width: 0, height: 0 });
+  const startPos = useRef({ x: 0, y: 0, width: 0, height: 0, chatX: 0, chatY: 0 });
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 'welcome',
@@ -80,35 +82,47 @@ const ChatWidget: React.FC = () => {
   };
 
   // Resize handlers
-  const handleResizeStart = (e: React.MouseEvent) => {
+  const handleResizeStart = (e: React.MouseEvent, dir: string) => {
+    if (isFullscreen) return;
     e.preventDefault();
-    setIsResizing(true);
+    e.stopPropagation();
+    setResizeDir(dir);
     startPos.current = {
       x: e.clientX,
       y: e.clientY,
       width: chatSize.width,
       height: chatSize.height,
+      chatX: chatPos.x,
+      chatY: chatPos.y,
     };
   };
 
   useEffect(() => {
-    if (!isResizing) return;
+    if (!resizeDir) return;
     const handleMouseMove = (e: MouseEvent) => {
-      const dx = startPos.current.x - e.clientX;
-      const dy = startPos.current.y - e.clientY;
-      setChatSize({
-        width: Math.max(320, Math.min(800, startPos.current.width + dx)),
-        height: Math.max(400, Math.min(700, startPos.current.height + dy)),
-      });
+      const dx = e.clientX - startPos.current.x;
+      const dy = e.clientY - startPos.current.y;
+      let newWidth = startPos.current.width;
+      let newHeight = startPos.current.height;
+      let newX = startPos.current.chatX;
+      let newY = startPos.current.chatY;
+
+      if (resizeDir.includes('e')) newWidth = Math.max(320, Math.min(900, startPos.current.width - dx));
+      if (resizeDir.includes('w')) { newWidth = Math.max(320, Math.min(900, startPos.current.width + dx)); newX = startPos.current.chatX - (newWidth - startPos.current.width); }
+      if (resizeDir.includes('s')) newHeight = Math.max(400, Math.min(800, startPos.current.height - dy));
+      if (resizeDir.includes('n')) { newHeight = Math.max(400, Math.min(800, startPos.current.height + dy)); newY = startPos.current.chatY - (newHeight - startPos.current.height); }
+
+      setChatSize({ width: newWidth, height: newHeight });
+      setChatPos({ x: newX, y: newY });
     };
-    const handleMouseUp = () => setIsResizing(false);
+    const handleMouseUp = () => setResizeDir(null);
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('mouseup', handleMouseUp);
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mouseup', handleMouseUp);
     };
-  }, [isResizing]);
+  }, [resizeDir]);
 
   return (
     <div className="chat-widget-container">
@@ -116,12 +130,12 @@ const ChatWidget: React.FC = () => {
         {isOpen && (
           <motion.div 
             ref={chatWindowRef}
-            className={`chat-window ${isResizing ? 'resizing' : ''}`}
+            className={`chat-window ${resizeDir ? 'resizing' : ''} ${isFullscreen ? 'fullscreen' : ''}`}
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            style={{ width: chatSize.width, height: chatSize.height }}
+            style={isFullscreen ? undefined : { width: chatSize.width, height: chatSize.height, right: chatPos.x, bottom: chatPos.y }}
           >
             {/* 顶部状态栏 */}
             <div className="chat-header">
@@ -141,6 +155,9 @@ const ChatWidget: React.FC = () => {
                   </div>
                 </div>
               </div>
+              <button onClick={() => setIsFullscreen(!isFullscreen)} className="fullscreen-btn" aria-label={isFullscreen ? "Exit fullscreen" : "Fullscreen"}>
+                {isFullscreen ? <Minimize2 size={18} /> : <Maximize2 size={18} />}
+              </button>
               <button onClick={() => setIsOpen(false)} className="close-btn" aria-label="Close chat">
                 <X size={20} />
               </button>
@@ -194,14 +211,19 @@ const ChatWidget: React.FC = () => {
               </button>
             </div>
 
-            {/* 拖拽调整大小的手柄 - 右下角 */}
-            <div className="resize-handle" onMouseDown={handleResizeStart} title="拖拽调整大小">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" opacity="0.5">
-                <path d="M12 12L6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
-                <path d="M12 8L8 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
-                <path d="M12 4L4 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
-              </svg>
-            </div>
+            {/* 全屏时隐藏拖拽手柄 */}
+            {!isFullscreen && (
+              <>
+                <div className="resize-handle resize-n" onMouseDown={(e) => handleResizeStart(e, 'n')} />
+                <div className="resize-handle resize-s" onMouseDown={(e) => handleResizeStart(e, 's')} />
+                <div className="resize-handle resize-e" onMouseDown={(e) => handleResizeStart(e, 'e')} />
+                <div className="resize-handle resize-w" onMouseDown={(e) => handleResizeStart(e, 'w')} />
+                <div className="resize-handle resize-ne" onMouseDown={(e) => handleResizeStart(e, 'ne')} />
+                <div className="resize-handle resize-nw" onMouseDown={(e) => handleResizeStart(e, 'nw')} />
+                <div className="resize-handle resize-se" onMouseDown={(e) => handleResizeStart(e, 'se')} />
+                <div className="resize-handle resize-sw" onMouseDown={(e) => handleResizeStart(e, 'sw')} />
+              </>
+            )}
           </motion.div>
         )}
       </AnimatePresence>
