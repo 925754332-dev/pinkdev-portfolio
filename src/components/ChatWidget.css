@@ -61,27 +61,31 @@
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
-/* Resize Handles - right, bottom, bottom-right only (anchored bottom-right) */
+/* Resize Handle - top-left corner */
 .resize-handle {
   position: absolute;
   z-index: 10;
 }
 
-.resize-handle.resize-s { bottom: 0; left: 20px; right: 20px; height: 6px; cursor: ns-resize; }
-.resize-handle.resize-e { top: 20px; right: 0; bottom: 20px; width: 6px; cursor: ew-resize; }
-.resize-handle.resize-se { bottom: 0; right: 0; width: 16px; height: 16px; cursor: nwse-resize; }
+.resize-handle.resize-nw {
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  cursor: nwse-resize;
+}
 
-/* 右下角角标 */
+/* 左上角角标 */
 .chat-window::after {
   content: '';
   position: absolute;
-  bottom: 2px;
-  right: 2px;
-  width: 16px;
-  height: 16px;
+  top: 4px;
+  left: 4px;
+  width: 18px;
+  height: 18px;
   cursor: nwse-resize;
-  background: linear-gradient(135deg, transparent 50%, rgba(255, 133, 161, 0.25) 50%);
-  border-radius: 0 0 24px 0;
+  background: linear-gradient(315deg, transparent 50%, rgba(255, 133, 161, 0.25) 50%);
+  border-radius: 24px 0 0 0;
   z-index: 11;
   pointer-events: none;
 }
