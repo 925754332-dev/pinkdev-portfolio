@@ -97,7 +97,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        "model": "google/gemini-2.0-flash-001", // 你可以在这里换成任何 OpenRouter 支持的模型
+        "model": "xiaomi/mimo-v2-pro",
         "messages": [
           { "role": "system", "content": systemPrompt },
           { "role": "user", "content": message }
