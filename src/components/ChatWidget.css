@@ -84,10 +84,19 @@
   width: 18px;
   height: 18px;
   cursor: nwse-resize;
-  background: linear-gradient(315deg, transparent 50%, rgba(255, 133, 161, 0.25) 50%);
+  background: linear-gradient(315deg, transparent 50%, rgba(255, 133, 161, 0.15) 50%);
   border-radius: 24px 0 0 0;
   z-index: 11;
   pointer-events: none;
+  transition: background 0.2s;
+}
+
+.chat-window:hover::after {
+  background: linear-gradient(315deg, transparent 50%, rgba(255, 133, 161, 0.4) 50%);
+}
+
+.chat-window.fullscreen::after {
+  display: none;
 }
 
 /* 全屏模式 */
