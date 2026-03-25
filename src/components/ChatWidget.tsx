@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bot, Send, X, Sparkles } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
 import './ChatWidget.css';
 
 interface Message {
@@ -113,7 +114,11 @@ const ChatWidget: React.FC = () => {
               {messages.map((msg) => (
                 <div key={msg.id} className={`message-wrapper ${msg.type}`}>
                   <div className={`message-bubble ${msg.type}`}>
-                    {msg.text}
+                    {msg.type === 'ai' ? (
+                      <ReactMarkdown>{msg.text}</ReactMarkdown>
+                    ) : (
+                      msg.text
+                    )}
                   </div>
                 </div>
               ))}

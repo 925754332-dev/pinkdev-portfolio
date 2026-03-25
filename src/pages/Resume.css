@@ -1,192 +1,305 @@
 .resume-page {
-  background-color: #f5f5f5;
+  background-color: #f8f9fa;
   min-height: 100vh;
-  padding: 40px 20px;
+  padding: 60px 20px;
   display: flex;
   justify-content: center;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-.resume-paper {
-  width: 800px;
+.resume-paper-v {
+  width: 900px;
   background-color: white;
-  display: flex;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  min-height: 1100px; /* A4 Ratio approx */
-}
-
-/* --- Sidebar --- */
-.resume-sidebar {
-  width: 260px;
-  background-color: #FDF2F5;
-  padding: 40px 30px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+  padding: 60px 70px;
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
 
-.resume-avatar {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  background-color: #FF85A1;
-  overflow: hidden;
-  border: 4px solid white;
+/* --- Header Section --- */
+.resume-header-v {
+  border-bottom: 2px solid #FDF2F5;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
-.resume-avatar img {
+.header-top-row-v {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+/* 头像宽度保持 150px */
+.header-left-v {
+  width: 150px;
+  flex-shrink: 0;
+}
+
+.resume-avatar-v {
+  width: 150px;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 4px solid #FDF2F5;
+}
+
+.resume-avatar-v img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.resume-section-title {
-  font-size: 14px;
+/* 右侧文字信息 */
+.header-text-info-v {
+  flex: 1;
+}
+
+.header-text-info-v h1 {
+  font-size: 48px;
+  margin: 0;
+  color: #333;
   font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.tagline-v {
+  font-size: 20px;
   color: #FF85A1;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-  text-transform: uppercase;
+  font-weight: 600;
+  margin: 5px 0 15px 0;
 }
 
-.contact-item, .social-item {
-  font-size: 12px;
-  color: #666;
-  margin-bottom: 8px;
-  display: block;
-  text-decoration: none;
-}
-
-.skills-list {
-  display: flex;
-  flex-direction: column;
+.contact-grid-v {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
 
-.skill-tag {
-  padding: 6px 12px;
-  font-size: 11px;
-  border: 1px solid #FF85A1;
-  color: #FF85A1;
-  display: inline-block;
-  width: fit-content;
+.contact-item-v {
+  font-size: 14px;
+  color: #666;
 }
 
-.skill-tag.solid {
+/* 技能 & 语言：单行排版，横跨全宽 */
+.header-bottom-row-v {
+  width: 100%;
+}
+
+.skills-inline-v {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.skill-tag-v {
+  padding: 5px 12px;
+  font-size: 13px;
+  border: 1px solid #FF85A1;
+  color: #FF85A1;
+  border-radius: 4px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.skill-tag-v.solid {
   background-color: #FF85A1;
   color: white;
 }
 
-.lang-item, .interest-text {
-  font-size: 12px;
-  color: #666;
-  line-height: 1.6;
+.lang-tag-v {
+  border-color: #4A90E2;
+  color: #4A90E2;
+  margin-left: 5px;
+  background-color: #f0f7ff;
 }
 
-/* --- Main Content --- */
-.resume-main {
-  flex: 1;
-  padding: 50px 40px;
+/* --- Content Sections --- */
+.resume-content-v {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 45px;
 }
 
-.resume-header h1 {
-  font-size: 42px;
-  margin: 0;
-  color: #333;
-  font-weight: 800;
-}
-
-.resume-header .tagline {
-  font-size: 18px;
-  color: #FF85A1;
-  margin-top: 5px;
-}
-
-.content-block-title {
-  font-size: 20px;
+.content-block-title-v {
+  font-size: 24px;
   font-weight: 800;
   color: #333;
-  border-bottom: 2px solid #FDF2F5;
-  padding-bottom: 10px;
   margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
 }
 
-.experience-item, .project-item {
-  margin-bottom: 25px;
+.content-block-title-v::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #FDF2F5;
+  z-index: -1;
 }
 
-.exp-header, .proj-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 8px;
-}
-
-.exp-header h3, .proj-header h3 {
-  font-size: 16px;
-  margin: 0;
-  color: #444;
-}
-
-.date {
-  font-size: 13px;
-  color: #999;
-}
-
-.exp-desc, .proj-desc, .summary-text {
-  font-size: 14px;
-  color: #666;
-  line-height: 1.6;
-  margin: 0;
-}
-
-.bullet-list {
+.bullet-list-v {
   list-style: none;
   padding: 0;
-  margin: 10px 0 0 0;
+  margin: 0;
 }
 
-.bullet-list li {
+.bullet-list-v li {
   position: relative;
-  padding-left: 15px;
-  margin-bottom: 5px;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
 }
 
-.bullet-list li::before {
+.bullet-list-v li::before {
   content: "•";
   position: absolute;
   left: 0;
   color: #FF85A1;
+  font-weight: bold;
 }
 
-.edu-text {
-  font-size: 14px;
-  color: #444;
-  margin-bottom: 15px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
+.bullet-list-v.compact li {
+  font-size: 15px;
+  margin-bottom: 6px;
 }
 
-.project-with-img {
+.experience-item-v {
+  margin-bottom: 10px;
+}
+
+.exp-header-v {
   display: flex;
-  gap: 20px;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
 }
 
-.proj-img {
-  width: 80px;
-  height: 80px;
+.exp-header-v h3 {
+  font-size: 20px;
+  color: #333;
+  margin: 0;
+}
+
+.date-v {
+  font-size: 15px;
+  color: #999;
+  font-weight: 500;
+}
+
+.project-item-v {
+  margin-bottom: 35px;
+}
+
+.project-with-img-v {
+  display: flex;
+  gap: 25px;
+}
+
+.proj-img-v {
+  width: 130px;
+  height: 130px;
+  border-radius: 12px;
+  overflow: hidden;
   background-color: #f5f5f5;
   flex-shrink: 0;
+  border: 1px solid #eee;
 }
 
-.proj-img img {
+.proj-img-v img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.proj-content-v {
+  flex: 1;
+}
+
+.proj-header-v {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.proj-header-v h3 {
+  font-size: 19px;
+  margin: 0;
+  color: #333;
+}
+
+.proj-badge-v {
+  font-size: 13px;
+  background-color: #FDF2F5;
+  color: #FF85A1;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.proj-desc-v {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.6;
+  margin: 0 0 10px 0;
+}
+
+.edu-container-v {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.edu-item-v {
+  padding: 15px 25px;
+  background-color: #fbfbfb;
+  border-radius: 8px;
+  border-left: 4px solid #FDF2F5;
+  transition: all 0.3s ease;
+}
+
+.edu-item-v:hover {
+  background-color: #fff9fa;
+  border-left-color: #FF85A1;
+}
+
+.edu-header-v {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.edu-main-v {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.edu-school-v {
+  font-size: 18px;
+  font-weight: 800;
+  color: #333;
+}
+
+.edu-degree-v {
+  font-size: 15px;
+  color: #FF85A1;
+  font-weight: 600;
+}
+
+.edu-details-v {
+  font-size: 14px;
+  color: #777;
 }
 
 /* --- Print Optimization --- */
@@ -196,36 +309,23 @@
     background-color: white;
   }
   
-  .resume-paper {
+  .resume-paper-v {
     box-shadow: none;
     width: 100%;
-    height: 100%;
+    padding: 40px;
   }
 
-  /* 隐藏网页装饰元素 */
-  nav, footer, .chat-widget-container, .contact-btn {
-    display: none !important;
-  }
-
-  /* 确保颜色在打印时保留 */
-  .resume-sidebar {
-    background-color: #FDF2F5 !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
+  .content-block-title-v::after {
+    display: none;
   }
   
-  .skill-tag.solid {
-    background-color: #FF85A1 !important;
-    -webkit-print-color-adjust: exact;
+  .content-block-title-v {
+    border-bottom: 2px solid #FDF2F5;
+    padding-bottom: 4px;
+    width: 100%;
   }
-}
 
-@media (max-width: 850px) {
-  .resume-paper {
-    width: 100%;
-    flex-direction: column;
-  }
-  .resume-sidebar {
-    width: 100%;
+  nav, footer, .chat-widget-container, .contact-btn {
+    display: none !important;
   }
 }
