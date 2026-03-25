@@ -12,6 +12,10 @@ interface Message {
 
 const ChatWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [chatSize, setChatSize] = useState({ width: 380, height: 520 });
+  const [isResizing, setIsResizing] = useState(false);
+  const chatWindowRef = useRef<HTMLDivElement>(null);
+  const startPos = useRef({ x: 0, y: 0, width: 0, height: 0 });
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 'welcome',
@@ -75,16 +79,49 @@ const ChatWidget: React.FC = () => {
     handleSend(text);
   };
 
+  // Resize handlers
+  const handleResizeStart = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsResizing(true);
+    startPos.current = {
+      x: e.clientX,
+      y: e.clientY,
+      width: chatSize.width,
+      height: chatSize.height,
+    };
+  };
+
+  useEffect(() => {
+    if (!isResizing) return;
+    const handleMouseMove = (e: MouseEvent) => {
+      const dx = startPos.current.x - e.clientX;
+      const dy = startPos.current.y - e.clientY;
+      setChatSize({
+        width: Math.max(320, Math.min(800, startPos.current.width + dx)),
+        height: Math.max(400, Math.min(700, startPos.current.height + dy)),
+      });
+    };
+    const handleMouseUp = () => setIsResizing(false);
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseup', handleMouseUp);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, [isResizing]);
+
   return (
     <div className="chat-widget-container">
       <AnimatePresence>
         {isOpen && (
           <motion.div 
-            className="chat-window"
+            ref={chatWindowRef}
+            className={`chat-window ${isResizing ? 'resizing' : ''}`}
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+            style={{ width: chatSize.width, height: chatSize.height }}
           >
             {/* 顶部状态栏 */}
             <div className="chat-header">
@@ -155,6 +192,14 @@ const ChatWidget: React.FC = () => {
               <button onClick={() => handleSend()} className="send-btn" disabled={!input.trim()}>
                 <Send size={18} />
               </button>
+            </div>
+
+            {/* 拖拽调整大小的手柄 */}
+            <div className="resize-handle" onMouseDown={handleResizeStart} title="Drag to resize">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" opacity="0.4">
+                <path d="M14 14L8 8M14 8L8 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
+                <path d="M14 14L10 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
+              </svg>
             </div>
           </motion.div>
         )}
