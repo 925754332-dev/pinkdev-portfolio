@@ -144,12 +144,14 @@ const ChatWidget: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <button onClick={() => setIsFullscreen(!isFullscreen)} className="fullscreen-btn" aria-label={isFullscreen ? "Exit fullscreen" : "Fullscreen"}>
-                {isFullscreen ? <Minimize2 size={18} /> : <Maximize2 size={18} />}
-              </button>
-              <button onClick={() => setIsOpen(false)} className="close-btn" aria-label="Close chat">
-                <X size={20} />
-              </button>
+              <div className="header-actions">
+                <button onClick={() => setIsFullscreen(!isFullscreen)} className="fullscreen-btn" aria-label={isFullscreen ? "Exit fullscreen" : "Fullscreen"}>
+                  {isFullscreen ? <Minimize2 size={18} /> : <Maximize2 size={18} />}
+                </button>
+                <button onClick={() => setIsOpen(false)} className="close-btn" aria-label="Close chat">
+                  <X size={20} />
+                </button>
+              </div>
             </div>
 
             {/* 聊天内容区 */}
