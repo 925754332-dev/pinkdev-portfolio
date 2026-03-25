@@ -100,20 +100,12 @@ const ChatWidget: React.FC = () => {
   useEffect(() => {
     if (!resizeDir) return;
     const handleMouseMove = (e: MouseEvent) => {
-      const dx = e.clientX - startPos.current.x;
-      const dy = e.clientY - startPos.current.y;
-      let newWidth = startPos.current.width;
-      let newHeight = startPos.current.height;
-      let newX = startPos.current.chatX;
-      let newY = startPos.current.chatY;
-
-      if (resizeDir.includes('e')) newWidth = Math.max(320, Math.min(900, startPos.current.width - dx));
-      if (resizeDir.includes('w')) { newWidth = Math.max(320, Math.min(900, startPos.current.width + dx)); newX = startPos.current.chatX - (newWidth - startPos.current.width); }
-      if (resizeDir.includes('s')) newHeight = Math.max(400, Math.min(800, startPos.current.height - dy));
-      if (resizeDir.includes('n')) { newHeight = Math.max(400, Math.min(800, startPos.current.height + dy)); newY = startPos.current.chatY - (newHeight - startPos.current.height); }
-
-      setChatSize({ width: newWidth, height: newHeight });
-      setChatPos({ x: newX, y: newY });
+      const dx = startPos.current.x - e.clientX;
+      const dy = startPos.current.y - e.clientY;
+      setChatSize(prev => ({
+        width: resizeDir.includes('e') ? Math.max(320, Math.min(900, startPos.current.width + dx)) : prev.width,
+        height: resizeDir.includes('s') ? Math.max(400, Math.min(800, startPos.current.height + dy)) : prev.height,
+      }));
     };
     const handleMouseUp = () => setResizeDir(null);
     window.addEventListener('mousemove', handleMouseMove);
@@ -214,14 +206,9 @@ const ChatWidget: React.FC = () => {
             {/* 全屏时隐藏拖拽手柄 */}
             {!isFullscreen && (
               <>
-                <div className="resize-handle resize-n" onMouseDown={(e) => handleResizeStart(e, 'n')} />
                 <div className="resize-handle resize-s" onMouseDown={(e) => handleResizeStart(e, 's')} />
                 <div className="resize-handle resize-e" onMouseDown={(e) => handleResizeStart(e, 'e')} />
-                <div className="resize-handle resize-w" onMouseDown={(e) => handleResizeStart(e, 'w')} />
-                <div className="resize-handle resize-ne" onMouseDown={(e) => handleResizeStart(e, 'ne')} />
-                <div className="resize-handle resize-nw" onMouseDown={(e) => handleResizeStart(e, 'nw')} />
                 <div className="resize-handle resize-se" onMouseDown={(e) => handleResizeStart(e, 'se')} />
-                <div className="resize-handle resize-sw" onMouseDown={(e) => handleResizeStart(e, 'sw')} />
               </>
             )}
           </motion.div>

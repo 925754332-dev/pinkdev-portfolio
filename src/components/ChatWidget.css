@@ -61,20 +61,15 @@
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
-/* Resize Handles - edges and corners */
+/* Resize Handles - right, bottom, bottom-right only (anchored bottom-right) */
 .resize-handle {
   position: absolute;
   z-index: 10;
 }
 
-.resize-handle.resize-n { top: 0; left: 10px; right: 10px; height: 6px; cursor: ns-resize; }
-.resize-handle.resize-s { bottom: 0; left: 10px; right: 10px; height: 6px; cursor: ns-resize; }
-.resize-handle.resize-e { top: 10px; right: 0; bottom: 10px; width: 6px; cursor: ew-resize; }
-.resize-handle.resize-w { top: 10px; left: 0; bottom: 10px; width: 6px; cursor: ew-resize; }
-.resize-handle.resize-ne { top: 0; right: 0; width: 14px; height: 14px; cursor: nesw-resize; }
-.resize-handle.resize-nw { top: 0; left: 0; width: 14px; height: 14px; cursor: nwse-resize; }
-.resize-handle.resize-se { bottom: 0; right: 0; width: 14px; height: 14px; cursor: nwse-resize; }
-.resize-handle.resize-sw { bottom: 0; left: 0; width: 14px; height: 14px; cursor: nesw-resize; }
+.resize-handle.resize-s { bottom: 0; left: 20px; right: 20px; height: 6px; cursor: ns-resize; }
+.resize-handle.resize-e { top: 20px; right: 0; bottom: 20px; width: 6px; cursor: ew-resize; }
+.resize-handle.resize-se { bottom: 0; right: 0; width: 16px; height: 16px; cursor: nwse-resize; }
 
 /* 右下角角标 */
 .chat-window::after {
