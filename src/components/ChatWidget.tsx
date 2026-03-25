@@ -97,8 +97,8 @@ const ChatWidget: React.FC = () => {
   useEffect(() => {
     if (!resizeDir) return;
     const handleMouseMove = (e: MouseEvent) => {
-      const dx = startPos.current.x - e.clientX;
-      const dy = startPos.current.y - e.clientY;
+      const dx = e.clientX - startPos.current.x;
+      const dy = e.clientY - startPos.current.y;
       setChatSize(prev => ({
         width: resizeDir.includes('e') ? Math.max(320, Math.min(900, startPos.current.width + dx)) : prev.width,
         height: resizeDir.includes('s') ? Math.max(400, Math.min(800, startPos.current.height + dy)) : prev.height,
