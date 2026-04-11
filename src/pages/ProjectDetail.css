@@ -55,6 +55,30 @@
   line-height: 1.8;
 }
 
+.detail-actions {
+  margin-top: 8px;
+}
+
+.view-live-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  border-radius: 16px;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: none;
+  transition: transform 0.3s, filter 0.3s, box-shadow 0.3s;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.view-live-btn:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
 .detail-stacks-row {
   display: flex;
   gap: 16px;

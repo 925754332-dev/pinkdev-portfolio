@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { projects } from '../data/projects';
+import { ExternalLink } from 'lucide-react';
 import './ProjectDetail.css';
 
 const ProjectDetail = () => {
@@ -24,6 +25,19 @@ const ProjectDetail = () => {
           </div>
           <h1 className="detail-title-text">{project.title}</h1>
           <p className="detail-desc-text">{project.longDesc}</p>
+          <div className="detail-actions">
+            {project.link && (
+              <a 
+                href={project.link} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="view-live-btn"
+                style={{ backgroundColor: project.badgeColor }}
+              >
+                View Live Project <ExternalLink size={18} />
+              </a>
+            )}
+          </div>
           <div className="detail-stacks-row">
             {project.tags.map(tag => (
               <span key={tag} className="stack-tag">{tag}</span>

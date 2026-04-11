@@ -8,6 +8,7 @@ export interface Project {
   tags: string[];
   image: string;
   badgeColor: string;
+  link?: string;
 }
 
 export const projects: Project[] = [
@@ -97,6 +98,7 @@ export const projects: Project[] = [
     longDesc: '开发了一个能够根据模糊指令自主生成、动态调整并实时协作的旅行规划 Agent。核心技术栈：React, Gemini 1.5 Flash, TypeScript, Three.js, Firebase, Wikipedia API。利用 Gemini Structured Output 实现了 AI 逻辑与业务模型解耦，输出 100% 机器可读数据；实现"环境感知"重规划机制，动态对齐行程细节；通过 Prompt Engineering 引导模拟工具调用，打通信息生成到动作引导闭环；利用 Firebase 维护长时记忆，支持 User-in-the-loop 交互微调。',
     tags: ['#React', '#Gemini', '#AI-Agent', '#Three.js'],
     image: '/images/amitrip-preview.png',
-    badgeColor: '#FFB347'
+    badgeColor: '#FFB347',
+    link: 'https://ai.studio/apps/2e633e26-ccb9-4a67-919e-7ece99b323ee'
   }
 ];
