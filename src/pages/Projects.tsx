@@ -6,16 +6,15 @@ import { projects } from '../data/projects';
 const Projects = () => {
   const [filter, setFilter] = useState('All');
 
-  const categories = ['All', 'Design', 'Coding'];
+  const categories = ['All', 'Vibe Coding', '古法编程'];
 
-  const filteredProjects = filter === 'All' 
-    ? projects 
-    : projects.filter(p => (filter === 'Coding' ? p.category === 'Coding' : p.category === 'Design'));
-
+  const filteredProjects = filter === 'All'
+    ? projects
+    : projects.filter(p => p.category === filter);
   return (
     <div className="detailed-projects-page container">
       <section className="title-group">
-        <h1 className="projects-title">Selected Projects</h1>
+        <h1 className="projects-title">Projects</h1>
         <p className="projects-sub">A deep dive into my creative coding journey.</p>
       </section>
 

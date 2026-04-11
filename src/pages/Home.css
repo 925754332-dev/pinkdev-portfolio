@@ -93,8 +93,7 @@
 .subline {
   font-size: 18px;
   color: var(--text-secondary); 
-  line-height: 1.8; 
-  max-width: 560px; 
+  line-height: 1.8;  
   margin-bottom: 40px;
   opacity: 0;
   animation: fadeUp 0.8s ease-out forwards 1.2s; 
@@ -206,7 +205,9 @@
 .skill-pill {
   display: flex; align-items: center; justify-content: center;
   gap: 12px; padding: 12px 28px;
-  min-width: 140px; border-radius: 50px; 
+  min-width: 140px; border-radius: 50px;
+  flex-grow: 1; /* 让它们自动撑开填满行宽 */
+  max-width: 240px; /* 防止在极宽屏幕上拉得太长 */
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
@@ -221,8 +222,20 @@
 }
 
 .skill-icon {
-  display: flex; align-items: center; justify-content: center;
-  height: 18px; color: var(--skill-color);
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  width: 18px; /* 明确宽度 */
+  height: 18px; /* 明确高度 */
+  color: var(--skill-color);
+  flex-shrink: 0;
+  /* 视觉修正：图标通常需要向上微调一点来对齐文字中心 */
+  transform: translateY(-0.5px);
+}
+
+.skill-name {
+  line-height: 1; /* 消除默认行高带来的间距 */
+  display: inline-block;
 }
 
 @keyframes floatBreathe {
@@ -273,17 +286,24 @@
 
 .home-project-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
 
-.title-icon {
+.title-emoji {
   display: inline-block;
   vertical-align: middle;
-  margin-left: 8px;
-  /* 移除所有背景冲突，让 SVG 自身的渐变生效 */
-  animation: iconPulse 2s infinite ease-in-out;
+  margin-left: 12px;
+  font-size: 1.8rem;
+  /* 修复：强制恢复颜色，防止继承父级的透明填充 */
+  -webkit-text-fill-color: initial;
+  text-fill-color: initial;
+  background-clip: border-box;
+  -webkit-background-clip: border-box;
+  
+  filter: drop-shadow(0 0 10px rgba(255, 133, 161, 0.4));
+  animation: emojiPulse 2s infinite ease-in-out;
 }
 
-@keyframes iconPulse {
-  0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
-  50% { transform: scale(1.2) rotate(15deg); opacity: 0.8; }
+@keyframes emojiPulse {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.2) rotate(15deg); }
 }
 
 /* ========== 星空与响应式 ========== */

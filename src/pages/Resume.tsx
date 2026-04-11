@@ -137,19 +137,38 @@ const Resume = () => {
             <div className="project-item-v">
               <div className="project-with-img-v">
                 <div className="proj-img-v">
-                  <img src="/images/generated-1772463847239.png" alt="小艺开放平台 UI 框架" />
+                  <img src="/images/xiaoyi-platform-official.png" alt="小艺开放平台" />
                 </div>
                 <div className="proj-content-v">
                   <div className="proj-header-v">
-                    <h3>小艺开放平台 UI 框架（AgentGUI 二期）</h3>
-                    <span className="proj-badge-v">前端负责人</span>
+                    <h3>小艺开放平台</h3>
+                    <span className="proj-badge-v">卡片系统 SE / 核心开发</span>
                   </div>
-                  <p className="proj-desc-v">原有框架无法处理复杂工作流中的循环依赖，导致新需求开发周期长、维护成本高。</p>
+                  <p className="proj-desc-v">主导小艺开放平台多模态 UI 框架设计与演进，制定平台级架构规范，支撑华为音乐、喜马拉雅等内外生态接入。</p>
                   <ul className="bullet-list-v compact">
-                    <li>🎯 <strong>架构解耦</strong>：首创<strong>字符串拼接异步调用方式</strong>，从底层逻辑规避循环依赖</li>
-                    <li>🛠️ <strong>性能优化</strong>：设计前端防抖与手动中断逻辑，接口响应效能提升 <strong>25%</strong></li>
-                    <li>🔧 <strong>抽象归一</strong>：深入 AbilityCard 与 MarkdownContent 源码，完成多模态 UI 抽象封装</li>
-                    <li>成功支持 9 图发送、拖拽等复杂交互；开发效率提升 <strong>40%</strong>；项目零 Bug 按时交付</li>
+                    <li>🚀 核心架构 0-1 突破：为解决平台架构升级及“文本与卡片混排”需求，主导 GUI 二期多模态 UI 框架设计。从零构建云端插件关联与工作流闭环逻辑，攻克 AbilityCard 与 MarkdownContent 循环依赖难题，成功实现底层能力归一化，为平台生态接入奠定基础。</li>
+                    <li>🌍 重量级生态场景落地：主导华为音乐（13项核心特性）与喜马拉雅智能体卡片设计，定义 DSL 规范并攻克流式输出、变量公式解析、多端适配等技术瓶颈，有力支撑 HDC 大会场景演示。</li>
+                    <li>⚡ 性能调优与体验重构：深挖 UIExtension 卡片渲染痛点，通过重构生命周期与重载方案解决加载黑屏、尺寸受限及退出重进重新加载等问题，大幅提升渲染效率与交互流畅度。</li>
+                    <li>📚 标准化业务资产沉淀：牵头梳理多模态 UI 抽象特征及可变属性基线，整合输出 platform 级 SE 设计方案基线与沟通矩阵。将零散的卡片业务逻辑进行云端标准化沉淀，有效提升团队后续开发协同效率。</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="project-item-v">
+              <div className="project-with-img-v">
+                <div className="proj-img-v">
+                  <img src="/images/generated-1772462706845.png" alt="小艺 APP" />
+                </div>
+                <div className="proj-content-v">
+                  <div className="proj-header-v">
+                    <h3>小艺 APP</h3>
+                    <span className="proj-badge-v">鸿蒙开发</span>
+                  </div>
+                  <p className="proj-desc-v">面向小艺端侧主对话、编创及内部协同（东海）场景，提供极速响应的前端业务交付与复杂交互链路支持。</p>
+                  <ul className="bullet-list-v compact">
+                    <li>🎨 多图创作引擎突破：为解决 OBP 核心需求中的单图发送限制，全栈负责并构建支持最高 9 图并发创作与流式发送的端侧链路；重构待发送区及多图拖拽排序逻辑，打破端侧技术瓶颈，带来极致的创作交互体验。</li>
+                    <li>👥 端侧社交协同攻坚：面向东海项目社交协同场景，从零构建前端工程环境并主导关系链与群组核心交互模块；攻克群组 @智能体 唤醒链路及多成员头像动态拼接算法，大幅压降现网环境问题，最终达成高质量清零验收。</li>
                   </ul>
                 </div>
               </div>
@@ -179,26 +198,6 @@ const Resume = () => {
             <div className="project-item-v">
               <div className="project-with-img-v">
                 <div className="proj-img-v">
-                  <img src="/images/generated-1772462714234.png" alt="AI 辅助编程实践" />
-                </div>
-                <div className="proj-content-v">
-                  <div className="proj-header-v">
-                    <h3>AI 辅助编程实践（OpenClaw / SDD 模式）</h3>
-                    <span className="proj-badge-v">技术领航</span>
-                  </div>
-                  <p className="proj-desc-v">传统编码模式重复率高，团队急需探索 AI 驱动的新一代研发模式。</p>
-                  <ul className="bullet-list-v compact">
-                    <li>🤖 <strong>Agent 协作</strong>：配置 OpenClaw 深度集成飞书/QQ，实现日报自动化与多类型文档（docx）阅读</li>
-                    <li>🧠 <strong>模式探索</strong>：应用 <strong>OpenSpec+Trae</strong> 跑通 SDD 全链路，配套 Gemini CLI 进行完整功能开发</li>
-                    <li>带动团队开发重复率降低 <strong>45%</strong>，整体效率提升 <strong>35%</strong>，成为部门 AI 编程技术标杆</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div className="project-item-v">
-              <div className="project-with-img-v">
-                <div className="proj-img-v">
                   <img src="/images/generated-1772463847239.png" alt="华为蓝鲸应用商城" />
                 </div>
                 <div className="proj-content-v">
@@ -208,26 +207,6 @@ const Resume = () => {
                   </div>
                   <p className="proj-desc-v">一站式 IT 应用解决方案集成平台，是产品线重点项目，已有超过120+主流应用上架。采用 React 框架，使用 Live UI 组件，适配PC端和移动端。</p>
                   <p className="proj-desc-v">作为前端开发负责人，负责大颗粒需求的软件设计、需求分析，承担日常的进度对齐工作，同时开发大颗粒需求内容。经手 20+ 项目，主要涉及 React、Angular 两大技术框架。处理问题单 350+，100% 还原设计稿，从开发和客户角度提出交互设计建议。</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="project-item-v">
-              <div className="project-with-img-v">
-                <div className="proj-img-v">
-                  <img src="/images/generated-1772462706845.png" alt="东海项目" />
-                </div>
-                <div className="proj-content-v">
-                  <div className="proj-header-v">
-                    <h3>东海项目（智能聊天/群组生态）</h3>
-                    <span className="proj-badge-v">前端负责人</span>
-                  </div>
-                  <p className="proj-desc-v">需在极短时间内上线智能体 @ 唤起、多维度头像拼接、分享链路等高复杂度交互功能。</p>
-                  <ul className="bullet-list-v compact">
-                    <li>⚡ <strong>高压交付</strong>：快速完成群组 @ 智能体逻辑、高复用群聊分享组件、多规格头像拼接算法</li>
-                    <li>🏗️ <strong>架构配置</strong>：完成手机镜像环境深度定制，主导群组模块核心接口（500 行+）从零开发</li>
-                    <li>节前演示圆满成功，获客户验收邮件；通过 310 版本发布，代码复用率显著提升</li>
-                  </ul>
                 </div>
               </div>
             </div>

@@ -2,31 +2,35 @@ import './Home.css';
 import { Link } from 'react-router-dom';
 import { projects } from '../data/projects';
 import { useState, useEffect } from 'react';
-import { Sparkles, Code2, Globe, Palette, Box, Layers, Cpu, Zap, Smartphone, Layout } from 'lucide-react';
+import { Sparkles, Code2, Globe, Palette, Box, Layers, Cpu, Zap, Terminal, Smartphone, Layout } from 'lucide-react';
 
 const Home = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
+    
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
+    
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
+  const title = "Crafting&nbsp;Digital&nbsp;Experiences";
+
   const skills = [
-    { name: 'React', icon: <Layers size={18} />, color: '#00A3CC' },
-    { name: 'Angular', icon: <Cpu size={18} />, color: '#E23237' },
-    { name: 'TypeScript', icon: <Code2 size={18} />, color: '#2F74C0' },
-    { name: 'Vue', icon: <Globe size={18} />, color: '#3FB27F' },
-    { name: 'HarmonyOS', icon: <Smartphone size={18} />, color: '#007DFF' },
-    { name: 'UI/UX Design', icon: <Palette size={18} />, color: '#E91E63' },
-    { name: '3D Vision', icon: <Box size={18} />, color: '#8E44AD' },
-    { name: 'Motion Dev', icon: <Zap size={18} />, color: '#D4AF37' },
-    { name: 'CSS Magic', icon: <Layout size={18} />, color: '#C2185B' },
-    { name: 'Digital Media', icon: <Smartphone size={18} />, color: '#0097A7' },
-    { name: 'Responsive', icon: <Layout size={18} />, color: '#689F38' },
+    { name: 'React', icon: <Layers size={18} />, color: 'var(--primary-color)' },
+    { name: 'Angular', icon: <Cpu size={18} />, color: 'var(--secondary-color)' },
+    { name: 'TypeScript', icon: <Code2 size={18} />, color: 'var(--primary-color)' },
+    { name: 'Vue', icon: <Globe size={18} />, color: 'var(--accent-green)' },
+    { name: 'UI/UX Design', icon: <Palette size={18} />, color: 'var(--accent-purple)' },
+    { name: 'Unity 3D', icon: <Box size={18} />, color: 'var(--accent-green)' },
+    { name: '3D Visualization', icon: <Box size={18} />, color: 'var(--accent-purple)' },
+    { name: 'Motion Dev', icon: <Zap size={18} />, color: 'var(--primary-color)' },
+    { name: 'HarmonyOS Dev', icon: <Smartphone size={18} />, color: 'var(--secondary-color)' },
+    { name: 'CSS Animation', icon: <Layout size={18} />, color: 'var(--primary-color)' },
+    { name: 'Responsive', icon: <Layout size={18} />, color: 'var(--secondary-color)' },
   ];
 
   return (
@@ -35,47 +39,14 @@ const Home = () => {
       '--mouse-y': `${mousePosition.y}px` 
     } as React.CSSProperties}>
       <div className="stars"></div>
-
-      {/* 定义全局渐变用于图标 */}
-      <svg width="0" height="0" style={{ position: 'absolute' }}>
-        <defs>
-          <linearGradient id="title-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="var(--primary-color)" />
-            <stop offset="100%" stopColor="var(--accent-purple)" />
-          </linearGradient>
-        </defs>
-      </svg>
       
       <section className="hero">
         <div className="hero-left">
-          <div className="dynamic-subtitle">
-            AI Agent & Frontend Engineer
-          </div>
           <h1 className="headline typing-text">
-            {"Crafting Digital Experiences".split(" ").map((word, wordIndex, wordsArray) => {
-              const prevLettersCount = wordsArray.slice(0, wordIndex).reduce((count, w) => count + w.length + 1, 0);
-              return (
-                <span key={wordIndex} className="word-wrapper" style={{ whiteSpace: 'nowrap', display: 'inline-block' }}>
-                  {word.split("").map((char, charIndex) => (
-                    <span 
-                      key={charIndex} 
-                      className="char" 
-                      style={{ '--index': prevLettersCount + charIndex } as React.CSSProperties}
-                    >
-                      {char}
-                    </span>
-                  ))}
-                  {wordIndex < wordsArray.length - 1 && (
-                    <span className="char" style={{ '--index': prevLettersCount + word.length } as React.CSSProperties}>
-                      &nbsp;
-                    </span>
-                  )}
-                </span>
-              );
-            })}
+            <span className="char" style={{ '--index': 0 } as React.CSSProperties}>Crafting Digital Experiences</span>
           </h1>
-          <p className="subline">
-            Hi! I'm Kelly Zhong. An AI-focused Frontend Engineer specializing in Agentic UI and interactive digital media. Currently at Huawei, I excel at building seamless interfaces for complex AI workflows, backed by a Master's degree from the University of Edinburgh.
+          <p className="subline fade-in">
+            Hi! I'm Kelly Zhong. A Huawei frontend developer with a Master's degree in Design & Digital Media from the University of Edinburgh. I excel at React and Angular, with expertise in UI design, 3D visualization, and motion development.
           </p>
           <Link to="/projects" className="view-projects-btn">View My Projects</Link>
         </div>
@@ -85,20 +56,22 @@ const Home = () => {
       </section>
 
       <section id="skills" className="skills-section container">
-        <h2 className="section-title">
-          My Skills <Sparkles className="title-icon" style={{ stroke: 'url(#title-gradient)' }} />
+        <h2 className="section-title fade-in" style={{ '--delay': '0.2s' } as React.CSSProperties}>
+          My Skills 
+          <span className="title-emoji">🍭</span>
         </h2>
         <div className="skills-flex">
           {skills.map((skill, index) => (
             <div 
               key={index} 
-              className="skill-pill"
+              className="skill-pill floating-skill"
               style={{ 
                 '--skill-color': skill.color,
-                '--index': index 
+                '--index': index,
+                '--delay': `${index * 0.1}s`
               } as React.CSSProperties}
             >
-              <span className="skill-icon" style={{ color: skill.color }}>{skill.icon}</span>
+              <span className="skill-icon">{skill.icon}</span>
               <span className="skill-name">{skill.name}</span>
             </div>
           ))}  
@@ -106,19 +79,20 @@ const Home = () => {
       </section>
 
       <section className="projects-section container">
-        <h2 className="section-title">Featured Projects</h2>
+        <h2 className="section-title fade-in" style={{ '--delay': '0.4s' } as React.CSSProperties}>Featured Projects</h2>
         <div className="home-projects-grid">
           {projects.map((project, index) => (
-            <Link to={`/project/${project.id}`} key={project.id} className="home-project-card" style={{ '--index': index } as React.CSSProperties}>
+            <Link to={`/project/${project.id}`} key={project.id} className="home-project-card floating-card" style={{ '--index': index } as React.CSSProperties}>
               <div className="home-project-image-wrapper">
                 <img src={project.image} alt={project.title} className="home-project-img" />
               </div>
               <h3 className="home-project-title">{project.title}</h3>
-              <p className="home-project-desc">{project.desc}</p>
+              <p className="home-project-desc fade-in" style={{ '--delay': `${0.5 + index * 0.1}s` } as React.CSSProperties}>{project.desc}</p>
             </Link>
           ))}
         </div>
       </section>
+
     </div>
   );
 };
