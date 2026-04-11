@@ -16,17 +16,17 @@ const Home = () => {
   }, []);
 
   const skills = [
-    { name: 'React', icon: <Layers size={18} />, color: '#61DAFB' },
-    { name: 'Angular', icon: <Cpu size={18} />, color: '#DD0031' },
-    { name: 'TypeScript', icon: <Code2 size={18} />, color: '#3178C6' },
-    { name: 'Vue', icon: <Globe size={18} />, color: '#4FC08D' },
+    { name: 'React', icon: <Layers size={18} />, color: '#00A3CC' },
+    { name: 'Angular', icon: <Cpu size={18} />, color: '#E23237' },
+    { name: 'TypeScript', icon: <Code2 size={18} />, color: '#2F74C0' },
+    { name: 'Vue', icon: <Globe size={18} />, color: '#3FB27F' },
     { name: 'HarmonyOS', icon: <Smartphone size={18} />, color: '#007DFF' },
-    { name: 'UI/UX Design', icon: <Palette size={18} />, color: 'var(--primary-color)' },
-    { name: '3D Vision', icon: <Box size={18} />, color: 'var(--accent-purple)' },
-    { name: 'Motion Dev', icon: <Zap size={18} />, color: 'var(--primary-color)' },
-    { name: 'CSS Magic', icon: <Layout size={18} />, color: 'var(--primary-color)' },
-    { name: 'Digital Media', icon: <Smartphone size={18} />, color: 'var(--accent-purple)' },
-    { name: 'Responsive', icon: <Layout size={18} />, color: 'var(--secondary-color)' },
+    { name: 'UI/UX Design', icon: <Palette size={18} />, color: '#E91E63' },
+    { name: '3D Vision', icon: <Box size={18} />, color: '#8E44AD' },
+    { name: 'Motion Dev', icon: <Zap size={18} />, color: '#D4AF37' },
+    { name: 'CSS Magic', icon: <Layout size={18} />, color: '#C2185B' },
+    { name: 'Digital Media', icon: <Smartphone size={18} />, color: '#0097A7' },
+    { name: 'Responsive', icon: <Layout size={18} />, color: '#689F38' },
   ];
 
   return (
@@ -35,6 +35,16 @@ const Home = () => {
       '--mouse-y': `${mousePosition.y}px` 
     } as React.CSSProperties}>
       <div className="stars"></div>
+
+      {/* 定义全局渐变用于图标 */}
+      <svg width="0" height="0" style={{ position: 'absolute' }}>
+        <defs>
+          <linearGradient id="title-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="var(--primary-color)" />
+            <stop offset="100%" stopColor="var(--accent-purple)" />
+          </linearGradient>
+        </defs>
+      </svg>
       
       <section className="hero">
         <div className="hero-left">
@@ -76,7 +86,7 @@ const Home = () => {
 
       <section id="skills" className="skills-section container">
         <h2 className="section-title">
-          My Skills <Sparkles className="title-icon" />
+          My Skills <Sparkles className="title-icon" style={{ stroke: 'url(#title-gradient)' }} />
         </h2>
         <div className="skills-flex">
           {skills.map((skill, index) => (

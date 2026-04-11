@@ -68,7 +68,7 @@
 }
 
 .nav-item {
-  color: var(--text-primary);
+  color: var(--text-secondary); /* 从 text-primary 改为更柔和的 text-secondary */
   font-size: 18px;
   font-weight: 500;
   text-decoration: none;
@@ -172,10 +172,18 @@
 }
 
 .footer-headline {
+  font-family: 'Outfit', sans-serif;
   font-size: 36px;
   font-weight: 700;
-  color: var(--text-primary);
   text-align: center;
+  /* 魔法渐变效果 */
+  background: var(--main-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .socials {
