@@ -20,8 +20,9 @@ export const projects: Project[] = [
     desc: '一个令人满意的粉色数字键盘应用程序，使用 TypeScript 构建。',
     longDesc: 'A satisfying pink numeric keypad application built with TypeScript. Leveraged Gemini AI Studio for rapid UI/UX prototyping. A fun project combining visual aesthetics with smooth interactions.',
     tags: ['#TypeScript', '#React', '#UI/UX'],
-    image: '/images/generated-1772464124258.png',
-    badgeColor: '#FF85A1'
+    image: '/images/pink-keyboard.png',
+    badgeColor: '#FF85A1',
+    link: 'https://pink-keyboard.vercel.app/'
   },
   {
     id: 6,

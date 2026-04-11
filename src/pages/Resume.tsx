@@ -137,6 +137,26 @@ const Resume = () => {
             <div className="project-item-v">
               <div className="project-with-img-v">
                 <div className="proj-img-v">
+                  <img src="/images/pink-keyboard.png" alt="Pink Keyboard" />
+                </div>
+                <div className="proj-content-v">
+                  <div className="proj-header-v">
+                    <h3>Pink Keyboard - 令人满意的粉色数字键盘</h3>
+                    <span className="proj-badge-v">TypeScript + UI/UX</span>
+                  </div>
+                  <p className="proj-desc-v">一个兼具视觉美感与丝滑交互体验的数字键盘应用。核心技术栈：React, TypeScript, CSS Animations。</p>
+                  <ul className="bullet-list-v compact">
+                    <li>🎨 **极致视觉设计**：利用 Google AI Studio 快速构建 UI/UX 原型，采用高饱和度粉色系与微交互动效，打造极致的感官体验。</li>
+                    <li>🛠️ **强类型工程化**：基于 TypeScript 进行全量类型定义，确保组件交互逻辑的严密性与可维护性。</li>
+                    <li>🚀 **高性能动画渲染**：通过 CSS 硬件加速与 React 状态优化，实现键盘按键反馈的零延迟响应。</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="project-item-v">
+              <div className="project-with-img-v">
+                <div className="proj-img-v">
                   <img src="/images/xiaoyi-platform-official.png" alt="小艺开放平台" />
                 </div>
                 <div className="proj-content-v">
