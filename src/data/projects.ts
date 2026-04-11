@@ -87,7 +87,7 @@ export const projects: Project[] = [
     desc: '华为 IT 基础设施智能运维与数据智能管理平台，使用 Angular 框架。',
     longDesc: '独立负责超融合、块文件发放等重点模块的开发，完成 3 个大版本迭代的开发。并担任虚拟化模块的接口人，负责定位和解决问题，在不熟悉项目的情况下也能快速定位，迅速担责，修改问题单 50+，获得版本之星称号。',
     tags: ['#Angular', '#TypeScript', '#Enterprise-App'],
-    image: '/images/generated-1772462667875.png',
+    image: '/images/dme-official.jpg',
     badgeColor: '#B092D5'
   },
   {

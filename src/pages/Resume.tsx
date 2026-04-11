@@ -237,7 +237,7 @@ const Resume = () => {
             <div className="project-item-v">
               <div className="project-with-img-v">
                 <div className="proj-img-v">
-                  <img src="/images/generated-1772462667875.png" alt="DME 数据管理引擎" />
+                  <img src="/images/dme-official.jpg" alt="DME 数据管理引擎" />
                 </div>
                 <div className="proj-content-v">
                   <div className="proj-header-v">
