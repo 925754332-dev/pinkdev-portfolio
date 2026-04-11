@@ -177,7 +177,7 @@ const Resume = () => {
             <div className="project-item-v">
               <div className="project-with-img-v">
                 <div className="proj-img-v">
-                  <img src="/images/generated-1772463847239.png" alt="AmiTrip" />
+                  <img src="/images/amitrip-preview.png" alt="AmiTrip" />
                 </div>
                 <div className="proj-content-v">
                   <div className="proj-header-v">
