@@ -158,7 +158,7 @@ const Resume = () => {
             <div className="project-item-v">
               <div className="project-with-img-v">
                 <div className="proj-img-v">
-                  <img src="/images/generated-1772462706845.png" alt="小艺 APP" />
+                  <img src="/images/xiaoyi-app-official.jpg" alt="小艺 APP" />
                 </div>
                 <div className="proj-content-v">
                   <div className="proj-header-v">
