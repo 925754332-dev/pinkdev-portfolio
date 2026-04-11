@@ -65,5 +65,38 @@ export const projects: Project[] = [
     tags: ['#Angular', '#TypeScript', '#Enterprise-App'],
     image: '/images/generated-1772462667875.png',
     badgeColor: '#B092D5'
+  },
+  {
+    id: 6,
+    title: '小艺开放平台 UI 框架（AgentGUI 二期）',
+    category: 'Coding',
+    badge: 'React · AI工程化',
+    desc: '主导小艺 AgentGUI 二期架构，支持插件/工作流/事件调用，解决循环依赖瓶颈，开发效率提升 40%。',
+    longDesc: '原有框架无法处理复杂工作流中的循环依赖。首创字符串拼接异步调用方式，从底层逻辑规避循环依赖；设计前端防抖与手动中断逻辑，接口响应效能提升 25%；深入 AbilityCard 与 MarkdownContent 源码，完成多模态 UI 抽象封装。成功支持 9 图发送、拖拽等复杂交互，项目零 Bug 按时交付。',
+    tags: ['#React', '#AgentGUI', '#AI工程化', '#多模态UI'],
+    image: '/images/generated-1772463847239.png',
+    badgeColor: '#FF85A1'
+  },
+  {
+    id: 7,
+    title: '东海项目（智能聊天/群组生态）',
+    category: 'Coding',
+    badge: 'React · 高复杂度交互',
+    desc: '高压下完成智能体 @ 唤起、多维度头像拼接、分享链路等高复杂度交互功能，节前演示圆满成功。',
+    longDesc: '需在极短时间内上线智能体 @ 唤起、多维度头像拼接、分享链路等高复杂度交互功能。快速完成群组 @ 智能体逻辑、高复用群聊分享组件、多规格头像拼接算法。完成手机镜像环境深度定制，主导群组模块核心接口（500 行+）从零开发。节前演示圆满成功，获客户验收邮件。',
+    tags: ['#React', '#智能体', '#群组生态', '#高压交付'],
+    image: '/images/generated-1772462706845.png',
+    badgeColor: '#82A0D8'
+  },
+  {
+    id: 8,
+    title: 'AI 辅助编程实践（OpenClaw / SDD 模式）',
+    category: 'Coding',
+    badge: 'AI · 效能革新',
+    desc: '落地 SDD（规范驱动开发）流程，验证"UI 生成→代码还原"闭环，带动团队效率提升 35%。',
+    longDesc: '传统编码模式重复率高，团队急需探索 AI 驱动的新一代研发模式。配置 OpenClaw 深度集成飞书/QQ，实现日报自动化与多类型文档（docx）阅读；应用 OpenSpec+Trae 跑通 SDD 全链路，配套 Gemini CLI 进行完整功能开发。带动团队开发重复率降低 45%，整体效率提升 35%，成为部门 AI 编程技术标杆。',
+    tags: ['#OpenClaw', '#SDD', '#AI编程', '#效能革新'],
+    image: '/images/generated-1772462714234.png',
+    badgeColor: '#86C59E'
   }
 ];

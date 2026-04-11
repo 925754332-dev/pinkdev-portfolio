@@ -1,3 +1,18 @@
+/* ========== 全局变量与自定义属性 ========== */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+:root {
+  --primary-color: #FF85A1;
+  --secondary-color: #82A0D8;
+  --accent-purple: #D8B4FE;
+  --text-primary: #333344;
+  --text-secondary: #666677;
+}
+
 .home {
   min-height: 100vh;
   background: transparent;
@@ -5,15 +20,17 @@
   position: relative;
 }
 
-/* ========== Hero 区域 ========== */
+/* ========== Hero 区域布局 ========== */
 .hero {
-  padding: 60px 20px;
+  padding: 80px 120px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
   align-items: center;
   position: relative;
   z-index: 1;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .hero-left {
@@ -22,133 +39,122 @@
   align-items: flex-start;
 }
 
-.badge {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  color: white;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 600;
+/* 小标题：恢复那个带粉色装饰线的精致版 */
+.dynamic-subtitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 4px;
+  text-transform: uppercase;
   margin-bottom: 20px;
-  display: inline-block;
-  animation: fadeIn 0.8s ease-out;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-shadow: 0 0 8px rgba(255, 133, 161, 0.3);
+  animation: fadeSlideUp 0.8s ease-out forwards 0.2s;
 }
 
-/* 打字机效果 */
-.typing-cursor {
-  position: relative;
-  display: inline-block;
-}
-
-.typing-cursor::after {
+.dynamic-subtitle::after {
   content: '';
-  position: absolute;
-  right: -10px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 8px;
-  height: 3px;
-  background: var(--primary-color);
-  border-radius: 4px;
-  animation: blink 0.8s infinite;
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--primary-color), transparent);
+  max-width: 60px;
 }
 
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
+/* 大标题：顶级打字机效果 + 整体连贯大渐变 */
 .headline {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 800;
-  color: var(--text-primary);
-  margin-bottom: 15px;
-  line-height: 1.2;
-  display: flex;
-  flex-wrap: wrap;
-  min-height: 80px;
-}
-
-.typing-text {
-  display: flex;
-  flex-wrap: wrap;
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 600; /* 调细字重，更有设计感 */
+  line-height: 1.1;
+  margin-bottom: 30px;
+  letter-spacing: -0.02em;
 }
 
 .char {
   display: inline-block;
   opacity: 0;
-  animation: typeIn 0.05s forwards;
-  animation-delay: calc(var(--index) * 0.05s);
+  transform: translateY(15px);
+  animation: charIn 0.6s cubic-bezier(0.2, 0, 0.2, 1) forwards;
+  animation-delay: calc(0.4s + (var(--index) * 0.04s));
+  
+  /* 每一个字母透出全局大渐变 */
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-purple));
+  background-attachment: fixed; /* 渐变锁定视口，确保连贯 */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-@keyframes typeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.char .cursor-last {
-  position: relative;
-}
-
-.char .cursor-last::after {
-  content: '|';
-  position: absolute;
-  right: -15px;
-  color: var(--primary-color);
-  animation: blink 0.8s infinite;
+@keyframes charIn {
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .subline {
-  font-size: 16px;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  max-width: 600px;
-  margin-bottom: 30px;
-}
-
-.fade-in {
+  font-size: 18px;
+  color: #555566;
+  line-height: 1.8;
+  max-width: 560px;
+  margin-bottom: 45px;
   opacity: 0;
-  animation: fadeUp 0.8s ease-out forwards;
-  animation-delay: var(--delay);
+  animation: fadeSlideUp 0.8s ease-out forwards 1.2s;
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* 按钮：1.5px 极细流光边框 + 玻璃感 */
 .view-projects-btn {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  color: white;
-  padding: 15px 30px;
-  border-radius: 30px;
+  position: relative;
+  padding: 14px 40px;
+  border-radius: 50px;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeSlideUp 0.8s ease-out forwards 1.6s;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.4s ease;
+  z-index: 1;
+  overflow: hidden;
+  background: transparent; /* 自身透明，显示下方流光和背景 */
+  color: var(--primary-color);
+  box-shadow: 0 10px 30px rgba(255, 133, 161, 0.15);
 }
+
+.view-projects-btn::before {
+  content: '';
+  position: absolute;
+  inset: -1.5px; /* 精确 1.5px 轨道宽度 */
+  border-radius: 51.5px;
+  background: conic-gradient(from var(--angle), transparent 20%, var(--accent-purple) 25%, var(--primary-color) 35%, #FFFFFF 40%, transparent 45%);
+  animation: rotateAngle 2s linear infinite;
+  z-index: -2;
+}
+
+.view-projects-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.4); /* 磨砂玻璃中心 */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 48px;
+  z-index: -1;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@keyframes rotateAngle { from { --angle: 0deg; } to { --angle: 360deg; } }
 
 .view-projects-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(74, 144, 226, 0.4);
+  transform: translateY(-5px) scale(1.02);
+  color: #9F7AEA; /* 悬浮颜色变化 */
+}
+
+.view-projects-btn:hover::after {
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .hero-right {
@@ -157,6 +163,7 @@
   align-items: center;
 }
 
+/* 图片：3.5s 零重力飘入 */
 .hero-image {
   width: 100%;
   max-width: 450px;
@@ -164,42 +171,39 @@
   border-radius: 30px;
   border: 8px solid white;
   box-shadow: 0 30px 60px rgba(255, 133, 161, 0.2);
-  animation: floatUp 1s ease-out 0.3s forwards, imageFloat 6s ease-in-out infinite alternate;
+  opacity: 0;
+  animation: 
+    imageDrift 3.5s cubic-bezier(0.1, 0, 0, 1) 0.5s forwards,
+    imageBreathe 8s ease-in-out infinite alternate 4s;
 }
 
-@keyframes imageFloat {
-  0% { transform: translateY(0) rotate(0deg); }
-  100% { transform: translateY(-15px) rotate(2deg); }
+@keyframes imageDrift {
+  from { opacity: 0; transform: translate(30px, 30px) scale(0.98); filter: blur(4px); }
+  to { opacity: 1; transform: translate(0, 0) scale(1); filter: blur(0); }
 }
 
-@keyframes floatUp {
-  0% {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
+@keyframes imageBreathe {
+  from { transform: translateY(0); }
+  to { transform: translateY(-15px); }
 }
 
-/* ========== 技能区域 ========== */
+/* ========== 技能区域：圆润、居中、灵动漂浮云 ========== */
 .skills-section {
-  padding: 80px 20px;
+  padding: 80px 20px 40px;
   position: relative;
   z-index: 1;
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.2rem;
   font-weight: 800;
-  color: var(--text-primary);
-  margin-bottom: 50px;
   text-align: center;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-purple));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: block;
+  margin-bottom: 50px;
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
@@ -210,62 +214,48 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .skill-pill {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 14px 28px;
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 50px;
-  color: #3D3D5C; /* 雅致的深紫调，替代纯黑 */
-  font-size: 16px;
+  gap: 12px;
+  padding: 12px 28px;
+  min-width: 140px;
+  justify-content: center;
+  border-radius: 50px; 
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: #3D3D5C; 
+  font-size: 15px;
   font-weight: 700;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03), inset 0 0 12px rgba(255, 255, 255, 0.5);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: organicFloat 4s ease-in-out infinite alternate;
+  animation-delay: calc(var(--index) * 0.2s);
+}
+
+@keyframes organicFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-10px) rotate(1.5deg); }
 }
 
 .skill-pill:hover {
   background: white;
-  transform: translateY(-8px) scale(1.08);
-  box-shadow: 0 15px 35px rgba(255, 133, 161, 0.25);
-  border-color: var(--primary-color);
-  color: var(--primary-color);
+  transform: translateY(-12px) scale(1.1) !important;
+  box-shadow: 0 15px 35px rgba(255, 133, 161, 0.2);
+  /* 恢复核心：悬浮变色逻辑 */
+  color: var(--skill-color);
+  border-color: var(--skill-color);
 }
 
-.skill-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--primary-color);
-  filter: drop-shadow(0 2px 4px rgba(255, 133, 161, 0.2));
-}
-
-.skill-name {
-  letter-spacing: 0.5px;
-}
-
-/* 浮动动画 */
-.floating-skill {
-  animation: skillFloat 4s ease-in-out infinite alternate;
-  animation-delay: var(--delay);
-}
-
-@keyframes skillFloat {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-10px); }
-}
-
-/* ========== 项目区域 ========== */
+/* ========== 项目区域：样式全面补全 ========== */
 .projects-section {
-  padding: 80px 20px;
-  background-color: transparent;
+  padding: 40px 20px 80px;
   position: relative;
   z-index: 1;
 }
@@ -274,35 +264,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-  padding: 20px 0;
-}
-
-/* 悬浮卡片效果 */
-.floating-card {
-  position: relative;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  animation: fadeIn 0.8s ease-out forwards;
-  animation-delay: calc(var(--index) * 0.15s);
-}
-
-.floating-card:hover {
-  transform: translateY(-15px) scale(1.05);
-  z-index: 10;
-}
-
-.floating-card::before {
-  content: '';
-  position: absolute;
-  inset: -5px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: -1;
-}
-
-.floating-card:hover::before {
-  opacity: 0.1;
 }
 
 .home-project-card {
@@ -312,253 +273,97 @@
   text-decoration: none;
   display: block;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  position: relative;
-  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.home-project-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 20px;
-  background: linear-gradient(45deg,
-    rgba(74, 144, 226, 0.1),
-    rgba(74, 144, 226, 0.05),
-    rgba(74, 144, 226, 0));
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-}
-
-.floating-card:hover .home-project-card::before {
-  opacity: 1;
+.home-project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(255, 133, 161, 0.15);
 }
 
 .home-project-image-wrapper {
   width: 100%;
-  height: 180px;
+  height: 200px; /* 强制高度约束 */
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 20px;
-  position: relative;
-  background: linear-gradient(135deg, var(--bg-color), var(--accent-purple));
+  background: linear-gradient(135deg, #FFF5F7, var(--accent-purple));
 }
 
 .home-project-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+  object-fit: cover; /* 强制裁切对齐 */
+  transition: transform 0.5s ease;
 }
 
-.floating-card:hover .home-project-img {
+.home-project-card:hover .home-project-img {
   transform: scale(1.1);
 }
 
 .home-project-title {
   font-size: 20px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--primary-color); /* 恢复粉色标题 */
   margin-bottom: 10px;
-  transition: color 0.3s ease;
-}
-
-.floating-card:hover .home-project-title {
-  color: var(--primary-color);
 }
 
 .home-project-desc {
   font-size: 14px;
-  color: var(--text-secondary);
+  color: #666677;
   line-height: 1.6;
 }
 
-/* ========== 星空与背景装饰 ========== */
+/* ========== 通用动画关键帧 ========== */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========== 星空背景 ========== */
 .stars {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 0;
-  background: 
-    radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
-      rgba(255, 133, 161, 0.12) 0%, 
-      transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(130, 160, 216, 0.08) 0%, transparent 50%);
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  pointer-events: none; z-index: 0;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 133, 161, 0.12) 0%, transparent 50%);
 }
 
-.stars::before,
-.stars::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* 极细的针尖状星光，0.8px-1px 的核心 */
-  background-image: 
-    radial-gradient(0.8px 0.8px at 25px 35px, var(--primary-color), transparent),
-    radial-gradient(0.8px 0.8px at 50px 80px, var(--secondary-color), transparent),
-    radial-gradient(1px 1px at 120px 150px, var(--primary-color), transparent),
-    radial-gradient(0.8px 0.8px at 180px 220px, var(--secondary-color), transparent),
-    radial-gradient(0.8px 0.8px at 220px 40px, var(--primary-color), transparent),
-    radial-gradient(1px 1px at 80px 10px, var(--secondary-color), transparent);
-  background-repeat: repeat;
-  background-size: 200px 200px;
-  opacity: 0.5;
-  filter: drop-shadow(0 0 1px var(--primary-color));
-  animation: sparkle 5s infinite ease-in-out;
+/* ========== 响应式自适应布局 ========== */
+@media (max-width: 1024px) {
+  .hero { padding: 60px 40px; gap: 40px; }
 }
 
-.stars::after {
-  background-size: 350px 350px;
-  filter: drop-shadow(0 0 1px var(--secondary-color));
-  animation: sparkle 8s infinite ease-in-out;
-  animation-delay: 1.5s;
-  opacity: 0.3;
-  transform: rotate(10deg);
-}
-
-@keyframes sparkle {
-  0%, 100% { 
-    opacity: 0.3; 
-    transform: scale(1); 
-  }
-  50% { 
-    opacity: 0.8; 
-    transform: scale(1.05); /* 极细微的缩放，保持精致感 */
-    filter: drop-shadow(0 0 2px var(--primary-color));
-  }
-}
-
-.title-icon {
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 8px;
-  color: var(--primary-color);
-  animation: iconPulse 2s infinite ease-in-out;
-}
-
-@keyframes iconPulse {
-  0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
-  50% { transform: scale(1.2) rotate(15deg); opacity: 0.8; }
-}
-
-/* ========== 响应式 ========== */
 @media (max-width: 768px) {
-  .hero {
-    grid-template-columns: 1fr;
-    padding: 40px 15px;
-  }
+  .hero { grid-template-columns: 1fr; padding: 40px 20px; text-align: center; }
+  .hero-left { align-items: center; order: 2; }
+  .hero-right { order: 1; margin-bottom: 30px; justify-content: center; }
+  .hero-image { max-width: 280px; }
   
-  .hero-right {
-    order: -1;
-    margin-bottom: 30px;
-  }
-  
-  .hero-image {
-    max-width: 300px;
-    width: 100%;
-    height: auto;
-  }
-  
-  .headline {
-    font-size: 2rem;
-  }
-  
-  .subline {
-    font-size: 14px;
-    line-height: 1.6;
-  }
-  
-  .skills-flex {
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-  }
-  
-  .home-projects-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  /* 移动端触控优化 */
-  .view-projects-btn {
-    min-height: 48px; /* 触控最小目标尺寸 */
-    font-size: 16px;
-  }
-  
-  /* 项目卡片触控区域优化 */
-  .home-project-card {
-    padding: 20px;
-  }
-  
-  /* 技能标签触控优化 */
-  .skill-pill {
-    min-height: 44px;
-    padding: 12px 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero {
-    padding: 30px 12px;
-  }
-  
-  .headline {
-    font-size: 1.6rem;
-  }
-  
-  .subline {
-    font-size: 13px;
-  }
-  
-  .badge {
-    font-size: 12px;
-    padding: 6px 12px;
-  }
-  
-  /* 防止字体过小导致阅读困难 */
-  .skill-pill {
-    font-size: 14px;
-  }
-  
-  /* 确保项目卡片不会太挤 */
-  .home-project-card {
-    margin-bottom: 16px;
-  }
-}
-
-/* 触摸设备优化：减少动画 */
-@media (hover: none) and (pointer: coarse) {
-  .floating-skill,
-  .floating-card {
-    animation: none !important;
-  }
-  
-  /* 提高按钮可点击区域 */
-  button, a {
-    min-height: 44px;
-  }
-}
-
-/* 减少动画偏好设置 */
-@media (prefers-reduced-motion: reduce) {
   .char {
-    animation: none;
-    opacity: 1;
+    font-size: 2.2rem !important;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-purple));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    animation: mobileFadeUp 0.8s ease-out forwards 0.4s;
+    animation-delay: calc(0.4s + (var(--index) * 0.04s));
   }
-  
-  .floating-skill,
-  .floating-card {
-    animation: none !important;
+
+  .dynamic-subtitle, .subline, .view-projects-btn {
+    opacity: 0;
+    animation: mobileFadeUp 0.8s ease-out forwards;
   }
-  
-  .stars {
-    background: none !important;
+  .dynamic-subtitle { animation-delay: 0.2s; }
+  .subline { animation-delay: 1.2s; }
+  .view-projects-btn { 
+    animation-delay: 1.6s; 
+    width: 280px; /* 移动端按钮与图片对齐 */
+    padding: 14px 0;
   }
+}
+
+@keyframes mobileFadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }

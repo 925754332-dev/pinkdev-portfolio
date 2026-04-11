@@ -21,8 +21,8 @@ const Resume = () => {
 
             {/* Right: Name & Contacts */}
             <div className="header-text-info-v">
-              <h1>Kelly Zhong</h1>
-              <p className="tagline-v">前端开发工程师 | 华为</p>
+              <h1>钟迎港</h1>
+              <p className="tagline-v">高级前端开发工程师 | 5 年 | 华为</p>
               <div className="contact-grid-v">
                 <div className="contact-item-v">👤 Kelly Zhong | 女 | 26岁</div>
                 <div className="contact-item-v">📧 925754332@qq.com</div>
@@ -39,10 +39,15 @@ const Resume = () => {
             <div className="skills-inline-v">
               <span className="skill-tag-v solid">React</span>
               <span className="skill-tag-v solid">Angular</span>
-              <span className="skill-tag-v">TypeScript</span>
+              <span className="skill-tag-v solid">Vue 3</span>
+              <span className="skill-tag-v">TypeScript（精通）</span>
               <span className="skill-tag-v">JavaScript</span>
+              <span className="skill-tag-v">OpenClaw 多 Agent</span>
+              <span className="skill-tag-v">SDD 模式</span>
+              <span className="skill-tag-v">OpenSpec+Trae</span>
               <span className="skill-tag-v">Android</span>
               <span className="skill-tag-v">鸿蒙 (HarmonyOS)</span>
+              <span className="skill-tag-v">ECharts / D3.js / Canvas</span>
               <span className="skill-tag-v lang-tag-v">英语 (雅思 7.0)</span>
             </div>
           </div>
@@ -50,6 +55,17 @@ const Resume = () => {
 
         {/* Main Content Sections */}
         <main className="resume-content-v">
+          <section className="resume-section-v">
+            <h2 className="content-block-title-v">职业总结</h2>
+            <ul className="bullet-list-v">
+              <li><strong>5 年前端深耕（杭州）</strong>，精通 <strong>React / Angular / Vue3</strong> 三大主流框架</li>
+              <li>在 <strong>AI 工程化</strong>与<strong>多模态 UI 抽象</strong>领域有深度实践，主导华为小艺 <strong>AgentGUI 二期框架</strong>建设</li>
+              <li>首创 <strong>SDD（Spec-Driven Development）工作流</strong>，擅长性能调优与组件库架构</li>
+              <li>代码缺陷率低至 <strong>0.54%</strong>，产出架构文档 10+ 份，具备极强的技术影响力</li>
+              <li>爱丁堡大学硕士（雅思 7.0），中英双语沟通流畅，<strong>5+ 场组内技术分享</strong></li>
+            </ul>
+          </section>
+
           <section className="resume-section-v">
             <h2 className="content-block-title-v">教育背景</h2>
             <div className="edu-container-v">
@@ -80,19 +96,19 @@ const Resume = () => {
             </div>
           </section>
 
+
+
           <section className="resume-section-v">
             <h2 className="content-block-title-v">个人优势</h2>
             <ul className="bullet-list-v">
-              <li>拥有5年+的前端开发经验，专注于产品线公共平台的前端开发，并参与开发过20+个前端项目</li>
-              <li>精通前端框架React、Angular，能够灵活运用这些框架进行高效开发</li>
-              <li>除了前端开发技能，还掌握非前端语言Android，展现出跨领域的技术实力</li>
-              <li>掌握鸿蒙（HarmonyOS）开发，具备 ArkUI 及相关生态的实战经验</li>
-              <li>具备快速上手和高效开发的能力，能够迅速适应新的技术和项目需求</li>
-              <li>具备UX设计经验，熟练掌握Photoshop、AI、Flash等设计软件，能够将设计思维融入到网页开发中，提升用户体验</li>
-              <li>掌握3D可视化技术（WebGL），能够为项目添加更丰富的视觉效果</li>
-              <li>擅长动效开发，熟悉svg and canvas动画，能够为网页添加生动的动态效果</li>
-              <li>具备良好的前端工程化实践和优化能力，能够显著提高开发效率和项目质量</li>
-              <li>英语阅读能力良好，有留学经历，雅思成绩7.0，能够流畅阅读英语技术文档和资料</li>
+              <li>5年+前端开发经验，主导20+项目的前端开发，专注于产品线公共平台构建</li>
+              <li>精通React、Angular、Vue 3三大框架，能够根据项目需求灵活选择技术栈</li>
+              <li>跨领域技术能力：掌握Android原生开发和鸿蒙（HarmonyOS）ArkUI开发</li>
+              <li>快速学习能力：能够迅速适应新技术和项目需求，高效完成开发任务</li>
+              <li>设计思维：具备UX设计经验，熟练使用Photoshop、AI等设计工具，将设计理念融入前端开发</li>
+              <li>视觉技术：掌握WebGL 3D可视化和SVG/Canvas动效开发，为项目提供丰富的视觉体验</li>
+              <li>工程化能力：具备前端工程化实践和性能优化经验，显著提升开发效率和项目质量</li>
+              <li>国际化视野：爱丁堡大学硕士，雅思7.0，能够流畅阅读英语技术文档和进行双语沟通</li>
             </ul>
           </section>
 
@@ -104,12 +120,13 @@ const Resume = () => {
                 <span className="date-v">2021.01 - 至今</span>
               </div>
               <ul className="bullet-list-v">
+                <li><strong>技术领导力</strong>：主导小艺 AgentGUI 二期架构，支持插件/工作流/事件调用；担任技术评审核心成员</li>
+                <li><strong>团队赋能</strong>：主导 Live UI 组件库建设，输出 6+ 核心动效组件，提升团队开发效率 <strong>30%</strong></li>
+                <li><strong>效能革新</strong>：引入 AI 工具链（OpenSpec+Trae 等），落地 SDD 研发模式，提升交付效率 <strong>35%</strong></li>
                 <li>负责产品线公共平台的相关前端开发任务，会根据业务需求，分时间负责不同的项目</li>
                 <li>作为接口人，定位和解决问题，曾处理问题单350+</li>
-                <li>负责功能模块的软件设计、开发、单元测试的编写和与后端联调工作</li>
                 <li>100%的还原设计稿，实现前端页面，并从开发和客户的角度提出交互设计建议</li>
-                <li>维护项目代码质量，检视开发的代码，必要时对代码进行重构</li>
-                <li>研究前沿前端技术，总结工作经验，编写技术文档，分享前端经验</li>
+                <li>维护项目代码质量，检视开发的代码，必要时对代码进行重构，产出架构文档 10+ 份</li>
               </ul>
             </div>
           </section>
@@ -117,6 +134,68 @@ const Resume = () => {
           <section className="resume-section-v">
             <h2 className="content-block-title-v">项目经历</h2>
             
+            <div className="project-item-v">
+              <div className="project-with-img-v">
+                <div className="proj-img-v">
+                  <img src="/images/generated-1772463847239.png" alt="小艺开放平台 UI 框架" />
+                </div>
+                <div className="proj-content-v">
+                  <div className="proj-header-v">
+                    <h3>小艺开放平台 UI 框架（AgentGUI 二期）</h3>
+                    <span className="proj-badge-v">前端负责人</span>
+                  </div>
+                  <p className="proj-desc-v">原有框架无法处理复杂工作流中的循环依赖，导致新需求开发周期长、维护成本高。</p>
+                  <ul className="bullet-list-v compact">
+                    <li>🎯 <strong>架构解耦</strong>：首创<strong>字符串拼接异步调用方式</strong>，从底层逻辑规避循环依赖</li>
+                    <li>🛠️ <strong>性能优化</strong>：设计前端防抖与手动中断逻辑，接口响应效能提升 <strong>25%</strong></li>
+                    <li>🔧 <strong>抽象归一</strong>：深入 AbilityCard 与 MarkdownContent 源码，完成多模态 UI 抽象封装</li>
+                    <li>成功支持 9 图发送、拖拽等复杂交互；开发效率提升 <strong>40%</strong>；项目零 Bug 按时交付</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="project-item-v">
+              <div className="project-with-img-v">
+                <div className="proj-img-v">
+                  <img src="/images/generated-1772463847239.png" alt="AmiTrip" />
+                </div>
+                <div className="proj-content-v">
+                  <div className="proj-header-v">
+                    <h3>AmiTrip - AI 原生智能旅行规划代理 (Agent)</h3>
+                    <span className="proj-badge-v">React + Gemini 1.5 Flash</span>
+                  </div>
+                  <p className="proj-desc-v">开发了一个能够根据模糊指令自主生成、动态调整并实时协作的旅行规划 Agent。核心技术栈：React, Gemini 1.5 Flash, TypeScript, Three.js, Firebase, Wikipedia API。</p>
+                  <ul className="bullet-list-v compact">
+                    <li>🧠 <strong>结构化决策引擎</strong>：利用 Gemini Structured Output (JSON Schema) 实现了 AI 逻辑与前端业务模型的解耦，要求 AI 自主决策交通工具、酒店档次及地理坐标，输出率达到 100% 的机器可读数据</li>
+                    <li>🔄 <strong>动态重规划逻辑</strong>：实现了 "环境感知"的重规划机制。当外部约束（如航班时间）改变时，Agent 能够基于当前状态（State）和新限制条件，自主触发逻辑闭环，重新计算并对齐所有后续行程细节</li>
+                    <li>🛠️ <strong>多维工具集成</strong>：通过 Prompt Engineering 引导 Agent 模拟工具调用，动态生成 Google Maps 导航协议、Wikipedia 词条检索及酒店预订查询，实现了从"信息生成"到"动作引导"的闭环</li>
+                    <li>💾 <strong>复杂状态机管理</strong>：通过 Firebase 和 React Hooks 维护 Agent 的长时记忆与当前上下文，支持用户通过自然语言对生成结果进行交互式微调（User-in-the-loop）</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="project-item-v">
+              <div className="project-with-img-v">
+                <div className="proj-img-v">
+                  <img src="/images/generated-1772462714234.png" alt="AI 辅助编程实践" />
+                </div>
+                <div className="proj-content-v">
+                  <div className="proj-header-v">
+                    <h3>AI 辅助编程实践（OpenClaw / SDD 模式）</h3>
+                    <span className="proj-badge-v">技术领航</span>
+                  </div>
+                  <p className="proj-desc-v">传统编码模式重复率高，团队急需探索 AI 驱动的新一代研发模式。</p>
+                  <ul className="bullet-list-v compact">
+                    <li>🤖 <strong>Agent 协作</strong>：配置 OpenClaw 深度集成飞书/QQ，实现日报自动化与多类型文档（docx）阅读</li>
+                    <li>🧠 <strong>模式探索</strong>：应用 <strong>OpenSpec+Trae</strong> 跑通 SDD 全链路，配套 Gemini CLI 进行完整功能开发</li>
+                    <li>带动团队开发重复率降低 <strong>45%</strong>，整体效率提升 <strong>35%</strong>，成为部门 AI 编程技术标杆</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
             <div className="project-item-v">
               <div className="project-with-img-v">
                 <div className="proj-img-v">
@@ -129,6 +208,26 @@ const Resume = () => {
                   </div>
                   <p className="proj-desc-v">一站式 IT 应用解决方案集成平台，是产品线重点项目，已有超过120+主流应用上架。采用 React 框架，使用 Live UI 组件，适配PC端和移动端。</p>
                   <p className="proj-desc-v">作为前端开发负责人，负责大颗粒需求的软件设计、需求分析，承担日常的进度对齐工作，同时开发大颗粒需求内容。经手 20+ 项目，主要涉及 React、Angular 两大技术框架。处理问题单 350+，100% 还原设计稿，从开发和客户角度提出交互设计建议。</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="project-item-v">
+              <div className="project-with-img-v">
+                <div className="proj-img-v">
+                  <img src="/images/generated-1772462706845.png" alt="东海项目" />
+                </div>
+                <div className="proj-content-v">
+                  <div className="proj-header-v">
+                    <h3>东海项目（智能聊天/群组生态）</h3>
+                    <span className="proj-badge-v">前端负责人</span>
+                  </div>
+                  <p className="proj-desc-v">需在极短时间内上线智能体 @ 唤起、多维度头像拼接、分享链路等高复杂度交互功能。</p>
+                  <ul className="bullet-list-v compact">
+                    <li>⚡ <strong>高压交付</strong>：快速完成群组 @ 智能体逻辑、高复用群聊分享组件、多规格头像拼接算法</li>
+                    <li>🏗️ <strong>架构配置</strong>：完成手机镜像环境深度定制，主导群组模块核心接口（500 行+）从零开发</li>
+                    <li>节前演示圆满成功，获客户验收邮件；通过 310 版本发布，代码复用率显著提升</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -159,27 +258,6 @@ const Resume = () => {
             <div className="project-item-v">
               <div className="project-with-img-v">
                 <div className="proj-img-v">
-                  <img src="/images/generated-1772462714234.png" alt="manageOne 可视化大屏" />
-                </div>
-                <div className="proj-content-v">
-                  <div className="proj-header-v">
-                    <h3>manageOne 可视化大屏项目</h3>
-                    <span className="proj-badge-v">React + ECharts</span>
-                  </div>
-                  <p className="proj-desc-v">该项目为产品线内普遍使用的可视化大屏项目，被 dme 等项目使用，实现简单编辑就生成酷炫大屏的功能。采用 React 框架和 Echarts。</p>
-                  <ul className="bullet-list-v compact">
-                    <li>开发2.0版本，采用新的视觉规范，对线型图、饼图、面积图等10+基本图形进行了功能升级，增加了样式颜色自定义功能</li>
-                    <li>无修改引入问题，重构图形编辑页面和项目代码结构，缩减代码10%</li>
-                    <li>自己独立研发了地图组件，实现倾斜+透视效果</li>
-                    <li>使用自研的经纬度转坐标算法，满足通过省份来定位，还能够改变颜色，阴影样式等</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div className="project-item-v">
-              <div className="project-with-img-v">
-                <div className="proj-img-v">
                   <img src="/images/generated-1772462667875.png" alt="DME 数据管理引擎" />
                 </div>
                 <div className="proj-content-v">
@@ -193,6 +271,27 @@ const Resume = () => {
                     <li>并担任虚拟化模块的接口人，负责定位和解决问题</li>
                     <li>在不熟悉项目的情况下也能快速定位，迅速承担责任，修改问题单50+</li>
                     <li>获得版本之星称号</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="project-item-v">
+              <div className="project-with-img-v">
+                <div className="proj-img-v">
+                  <img src="/images/generated-1772462714234.png" alt="manageOne 可视化大屏" />
+                </div>
+                <div className="proj-content-v">
+                  <div className="proj-header-v">
+                    <h3>manageOne 可视化大屏项目</h3>
+                    <span className="proj-badge-v">React + ECharts</span>
+                  </div>
+                  <p className="proj-desc-v">该项目为产品线内普遍使用的可视化大屏项目，被 dme 等项目使用，实现简单编辑就生成酷炫大屏的功能。采用 React 框架和 Echarts。</p>
+                  <ul className="bullet-list-v compact">
+                    <li>开发2.0版本，采用新的视觉规范，对线型图、饼图、面积图等10+基本图形进行了功能升级，增加了样式颜色自定义功能</li>
+                    <li>无修改引入问题，重构图形编辑页面和项目代码结构，缩减代码10%</li>
+                    <li>自己独立研发了地图组件，实现倾斜+透视效果</li>
+                    <li>使用自研的经纬度转坐标算法，满足通过省份来定位，还能够改变颜色，阴影样式等</li>
                   </ul>
                 </div>
               </div>
