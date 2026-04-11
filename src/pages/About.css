@@ -1,12 +1,17 @@
 .about-page {
   padding-top: 100px;
   padding-bottom: 160px;
+  background-color: #FFF5F7; /* .pen 页面背景色 */
 }
 
 .about-content {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 120px;
   display: flex;
+  justify-content: space-between;
   align-items: flex-start;
-  gap: 100px;
+  gap: 100px; /* .pen 间距 */
 }
 
 .about-image-column {
@@ -14,7 +19,21 @@
   height: 640px;
   flex-shrink: 0;
   position: sticky;
-  top: 140px; 
+  top: 140px;
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 40px;
+  /* .pen 精准阴影 */
+  box-shadow: 0 20px 40px rgba(255, 133, 161, 0.15);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-image:hover {
+  transform: scale(1.02) rotate(-1deg);
 }
 
 .about-text-column {
@@ -24,62 +43,44 @@
   gap: 40px;
 }
 
-.about-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 40px;
-  box-shadow: 0 20px 40px var(--shadow-color);
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
-}
-
-.about-image:hover {
-  transform: scale(1.02) rotate(-1deg);
-  box-shadow: 0 30px 60px rgba(255, 133, 161, 0.2);
-}
-
 .greeting {
+  font-family: 'Inter', sans-serif;
   font-size: 48px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: #4A4A4A; /* .pen 原始色 */
+  margin: 0;
 }
 
 .bio {
+  font-family: 'Inter', sans-serif;
   font-size: 20px;
-  color: var(--text-secondary);
+  color: #6B6B6B; /* .pen 原始色 */
   line-height: 1.6;
 }
 
 .facts-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  background-color: var(--white);
-  padding: 32px;
-  border-radius: 32px;
-  box-shadow: 0 10px 30px rgba(255, 133, 161, 0.05);
-}
-
-.fact-item {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
-.fact-label {
-  font-size: 14px;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.fact-pill {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 100px;
+  background-color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 700;
+  border: 2px solid transparent;
 }
 
-.fact-value {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--text-primary);
-}
+/* 针对不同标签应用 .pen 中的颜色 */
+.fact-pill.coffee { color: #FF85A1; border-color: #FF85A1; }
+.fact-pill.games { color: #82A0D8; border-color: #82A0D8; }
+.fact-pill.keyboards { color: #86C59E; border-color: #86C59E; }
 
-/* --- Experience Timeline Styles --- */
+/* Timeline Section */
 .experience-section, .education-section {
   padding-top: 40px;
   display: flex;
@@ -88,9 +89,10 @@
 }
 
 .exp-main-title, .edu-main-title {
+  font-family: 'Inter', sans-serif;
   font-size: 32px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: #4A4A4A;
 }
 
 .timeline {
@@ -108,54 +110,59 @@
   flex-direction: column;
   align-items: center;
   width: 32px;
-  flex-shrink: 0;
 }
 
 .timeline-dot {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  flex-shrink: 0;
+  background-color: #FF85A1; /* .pen 默认色 */
 }
 
 .timeline-line {
   width: 2px;
-  height: 80px; /* As per design */
+  height: 80px;
+  background-color: #FF85A120;
 }
 
 .timeline-content {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  padding-bottom: 40px; /* As per design */
+  padding-bottom: 40px;
 }
 
 .timeline-role {
   font-size: 18px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: #4A4A4A;
 }
 
 .timeline-date {
   font-size: 14px;
   font-weight: 700;
+  color: #FF85A1;
 }
 
 .timeline-desc {
   font-size: 14px;
-  color: var(--text-secondary);
+  color: #6B6B6B;
+  line-height: 1.5;
 }
 
-/* --- Education Card Styles --- */
+/* Education Card */
 .education-card {
-  background-color: var(--white);
+  background-color: #FFFFFF;
   border-radius: 24px;
   padding: 24px;
-  border: 2px solid;
   display: flex;
   align-items: center;
   gap: 20px;
+  border: 2px solid transparent;
 }
+
+.education-card.master { border-color: #B092D520; }
+.education-card.bachelor { border-color: #82A0D820; }
 
 .edu-icon-box {
   width: 48px;
@@ -164,8 +171,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-shrink: 0;
 }
+
+.edu-icon-box.master { background-color: #B092D515; color: #B092D5; }
+.edu-icon-box.bachelor { background-color: #82A0D815; color: #82A0D8; }
 
 .edu-info {
   display: flex;
@@ -176,12 +185,12 @@
 .edu-degree {
   font-size: 18px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: #4A4A4A;
 }
 
 .edu-school {
   font-size: 16px;
-  color: var(--text-secondary);
+  color: #6B6B6B;
 }
 
 .edu-date {
@@ -189,12 +198,15 @@
   font-weight: 700;
 }
 
+.edu-date.master { color: #B092D5; }
+.edu-date.bachelor { color: #82A0D8; }
 
-/* Media query to handle smaller screens */
+/* Responsive */
 @media (max-width: 1200px) {
   .about-content {
     flex-direction: column;
     align-items: center;
+    padding: 0 40px;
     gap: 60px;
   }
   
@@ -204,4 +216,11 @@
     max-width: 500px;
     height: 500px;
   }
+}
+
+@media (max-width: 768px) {
+  .about-content { padding: 0 24px; }
+  .greeting { font-size: 32px; text-align: center; }
+  .about-text-column { align-items: center; text-align: center; }
+  .facts-grid { justify-content: center; }
 }
