@@ -13,12 +13,24 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 8,
+    title: 'AmiTrip - AI 旅行规划',
+    category: 'Vibe Coding',
+    badge: 'React + Gemini',
+    desc: '基于 Gemini 构建的智能旅行 Agent，支持模糊指令生成与实时动态重规划。',
+    longDesc: '开发了一个能够根据模糊指令自主生成、动态调整并实时协作的旅行规划 Agent。核心技术栈：React, Gemini, TypeScript, Three.js, Firebase, Wikipedia API。利用 Gemini Structured Output 实现了 AI 逻辑与业务模型解耦，输出 100% 机器可读数据；实现"环境感知"重规划机制，动态对齐行程细节；通过 Prompt Engineering 引导模拟工具调用，打通信息生成到动作引导闭环；利用 Firebase 维护长时记忆，支持 User-in-the-loop 交互微调。',
+    tags: ['#React', '#Gemini', '#AI-Agent', '#Three.js'],
+    image: '/images/amitrip-preview.png',
+    badgeColor: '#FFB347',
+    link: 'https://ai.studio/apps/2e633e26-ccb9-4a67-919e-7ece99b323ee'
+  },
+  {
     id: 1,
-    title: 'Pink-Keyboard-Final',
+    title: 'Pink Keyboard 解压键盘',
     category: 'Vibe Coding',
     badge: 'TypeScript',
-    desc: '一个令人满意的粉色数字键盘应用程序，使用 TypeScript 构建。',
-    longDesc: 'A satisfying pink numeric keypad application built with TypeScript. Leveraged Gemini AI Studio for rapid UI/UX prototyping. A fun project combining visual aesthetics with smooth interactions.',
+    desc: '一个解压键盘，用Google ai studio生成，配上优雅的音乐和爆出来的字符，非常解压。',
+    longDesc: '一个解压键盘，用Google ai studio生成，配上优雅的音乐，和爆出来的字符，非常解压。',
     tags: ['#TypeScript', '#React', '#UI/UX'],
     image: '/images/pink-keyboard.png',
     badgeColor: '#FF85A1',
@@ -52,7 +64,7 @@ export const projects: Project[] = [
     category: '古法编程',
     badge: 'React + Live UI',
     desc: '一站式 IT 应用解决方案集成平台，产品线重点项目，已有超过 120+ 主流应用上架。',
-    longDesc: '作为前端开发负责人，负责大颗粒需求的软件设计、需求分析，承担日常的进度对齐工作，同时开发大颗粒需求内容。经手 20+ 项目，主要涉及 React、Angular 两大技术框架。处理问题单 350+，100% 还原设计稿，从开发和客户角度提出交互设计建议。',
+    longDesc: '作为前端开发负责人，负责大颗粒需求的软件设计、需求分析，承担日常的进度对齐工作，同时开发大颗粒需求内容风控回扫、用户留资弹窗等，曾一人对接5个后端开发，在本地进行 mock ，实现前端先行，顺利完成联调。保证按时版本交付，无红线问题，缺陷率仅为0.54。',
     tags: ['#React', '#Angular', '#Live-UI', '#Ant-Mobile'],
     image: '/images/generated-1772463847239.png',
     badgeColor: '#82A0D8'
@@ -89,17 +101,5 @@ export const projects: Project[] = [
     tags: ['#Angular', '#TypeScript', '#Enterprise-App'],
     image: '/images/dme-official.jpg',
     badgeColor: '#B092D5'
-  },
-  {
-    id: 8,
-    title: 'AmiTrip - AI 原生智能旅行规划代理 (Agent)',
-    category: 'Vibe Coding',
-    badge: 'React + Gemini 1.5 Flash',
-    desc: '基于 Gemini 1.5 Flash 构建的智能旅行 Agent，支持模糊指令生成与实时动态重规划。',
-    longDesc: '开发了一个能够根据模糊指令自主生成、动态调整并实时协作的旅行规划 Agent。核心技术栈：React, Gemini 1.5 Flash, TypeScript, Three.js, Firebase, Wikipedia API。利用 Gemini Structured Output 实现了 AI 逻辑与业务模型解耦，输出 100% 机器可读数据；实现"环境感知"重规划机制，动态对齐行程细节；通过 Prompt Engineering 引导模拟工具调用，打通信息生成到动作引导闭环；利用 Firebase 维护长时记忆，支持 User-in-the-loop 交互微调。',
-    tags: ['#React', '#Gemini', '#AI-Agent', '#Three.js'],
-    image: '/images/amitrip-preview.png',
-    badgeColor: '#FFB347',
-    link: 'https://ai.studio/apps/2e633e26-ccb9-4a67-919e-7ece99b323ee'
   }
 ];

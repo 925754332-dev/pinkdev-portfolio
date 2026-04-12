@@ -8,5 +8,13 @@ export default defineConfig({
     // 关键：让 Vite 使用 Vercel 提供的端口，或者默认的 5173
     port: Number(process.env.PORT) || 5173,
     strictPort: true, // 如果端口被占用就报错，而不是换一个，这样 Vercel 才能抓到它
+    proxy: {
+      // 本地开发时，将 /api 请求代理到 Vercel 部署的地址
+      '/api': {
+        target: 'https://pinkdev-portfolio.vercel.app',
+        changeOrigin: true,
+        secure: true,
+      },
+    },
   },
 })

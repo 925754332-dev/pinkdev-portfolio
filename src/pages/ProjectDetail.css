@@ -13,7 +13,7 @@
 
 .detail-hero {
   display: flex;
-  gap: 80px;
+  gap: 60px;
   align-items: center;
   background-color: var(--white);
   padding: 60px;
@@ -21,9 +21,24 @@
   box-shadow: 0 20px 40px rgba(255, 133, 161, 0.05);
 }
 
+.detail-image-link {
+  display: block;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.detail-image-link:hover {
+  transform: translateY(-4px);
+}
+
+.detail-image-link:hover .detail-img-content {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
 .detail-image-frame {
-  width: 600px;
-  height: 400px;
+  width: 450px;
+  height: 300px;
   border-radius: 40px;
   overflow: hidden;
   flex-shrink: 0;
@@ -33,6 +48,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 .detail-info-content {
@@ -55,29 +71,7 @@
   line-height: 1.8;
 }
 
-.detail-actions {
-  margin-top: 8px;
-}
 
-.view-live-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 16px 32px;
-  border-radius: 16px;
-  color: white;
-  font-weight: 600;
-  font-size: 18px;
-  text-decoration: none;
-  transition: transform 0.3s, filter 0.3s, box-shadow 0.3s;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.view-live-btn:hover {
-  transform: translateY(-3px);
-  filter: brightness(1.1);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
 
 .detail-stacks-row {
   display: flex;

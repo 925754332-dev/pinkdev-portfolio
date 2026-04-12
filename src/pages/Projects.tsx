@@ -32,25 +32,25 @@ const Projects = () => {
 
       <div className="project-list-detailed">
         {filteredProjects.map(project => (
-          <Link to={`/project/${project.id}`} key={project.id} className="detailed-proj-card-link">
-            <div className="detailed-proj-card">
+          <div key={project.id} className="detailed-proj-card">
+            <Link to={`/project/${project.id}`} className="detailed-proj-card-link">
               <div className="proj-image-frame">
                 <img src={project.image} alt={project.title} className="proj-img-content" />
               </div>
-              <div className="proj-info-content">
-                <div className="proj-badge" style={{ backgroundColor: `${project.badgeColor}15`, color: project.badgeColor }}>
-                  {project.badge}
-                </div>
-                <h2 className="proj-title-text">{project.title}</h2>
-                <p className="proj-desc-text">{project.desc}</p>
-                <div className="proj-stacks-row">
-                  {project.tags.map(tag => (
-                    <span key={tag} className="stack-tag">{tag}</span>
-                  ))}
-                </div>
+            </Link>
+            <div className="proj-info-content">
+              <div className="proj-badge" style={{ backgroundColor: `${project.badgeColor}15`, color: project.badgeColor }}>
+                {project.badge}
+              </div>
+              <h2 className="proj-title-text">{project.title}</h2>
+              <p className="proj-desc-text">{project.desc}</p>
+              <div className="proj-stacks-row">
+                {project.tags.map(tag => (
+                  <span key={tag} className="stack-tag">{tag}</span>
+                ))}
               </div>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
     </div>
