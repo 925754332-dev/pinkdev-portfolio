@@ -94,12 +94,16 @@ const Resume = () => {
           <section className="resume-section-v">
             <h2 className="content-block-title-v">个人优势</h2>
             <ul className="bullet-list-v">
-              <li>🚀 <strong>核心技术储备</strong>：5 年+前端深耕，精通 React/Angular/Vue 3 全栈框架；具备 Android 原生及鸿蒙 (ArkUI) 跨端开发能力，主导并交付 20+ 重点项目。</li>
-              <li>🧠 <strong>AI 工程化先锋</strong>：深度实践 AI 驱动开发 (AICD)，熟练运用 Claude/Gemini 进行代码重构；在智能体项目中擅长 Prompt Engineering 与 结构化数据协议设计，实现 AI 逻辑与 UI 的深度集成。</li>
-              <li>🎨 <strong>视觉与交互专家</strong>：兼具 UX 设计背景与 WebGL/Canvas 动效开发能力，擅长利用 AI 原型工具快速复刻高保真界面，实现从交互设计到硬核代码的闭环。</li>
-              <li>🏗️ <strong>架构与工程化</strong>：具备大型公共平台构建经验，精通前端工程化与性能调优；曾一人对接 5 个后端并推行 Mock 先行策略，将交付缺陷率降至 0.54%。</li>
-              <li>🌐 <strong>国际化沟通</strong>：爱丁堡大学硕士（雅思 7.0），曾进行全英文授课，具备流利的双语技术交流能力，能够无障碍调研海外前沿技术文档。</li>
-              <li>⚡ <strong>快速适配与自驱</strong>：具备极强的技术迁移能力，在华为期间多次跨产品线敏捷支撑，累计解决 350+ 复杂问题单，产出架构文档 10+ 份。</li>
+              <li><strong>5年+前端开发经验</strong>，主导20+项目的前端开发，专注于产品线公共平台构建</li>
+              <li><strong>精通React、Angular、Vue 3三大框架</strong>，能够根据项目需求灵活选择技术栈</li>
+              <li><strong>跨领域技术能力</strong>：掌握Android原生开发和鸿蒙（HarmonyOS）ArkUI开发</li>
+              <li><strong>快速学习能力</strong>：能够迅速适应新技术和项目需求，高效完成开发任务</li>
+              <li><strong>设计思维</strong>：具备UX设计经验，熟练使用Photoshop、AI等设计工具，将设计理念融入前端开发</li>
+              <li><strong>视觉技术</strong>：掌握WebGL 3D可视化和SVG/Canvas动效开发，为项目提供丰富的视觉体验</li>
+              <li><strong>工程化能力</strong>：具备前端工程化实践和性能优化经验，显著提升开发效率和项目质量</li>
+              <li><strong>AI辅助编程</strong>：熟练使用 Claude Code、OpenCode、Gemini 等 AI 工具进行代码生成、重构和问题排查</li>
+              <li><strong>AI工程化</strong>：在智能体项目中积累了丰富的 AI 工程化经验，包括 Prompt Engineering、结构化输出设计</li>
+              <li><strong>国际化视野</strong>：爱丁堡大学硕士，雅思7.0，曾为海外一线进行英文授课，能够流畅阅读英语技术文档和进行双语沟通</li>
             </ul>
           </section>
 
